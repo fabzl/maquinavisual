@@ -4,7 +4,8 @@ const initialState = {
   loading: false,
   pages: [],
   posts: [],
-  error: ''
+  error: '',
+  language: 'en'
 };
 
 export default (state = initialState, action) => {
@@ -16,7 +17,8 @@ export default (state = initialState, action) => {
         ...state,
         loading: false,
         pages: action.payload.pages,
-        posts: action.payload.posts
+        posts: action.payload.posts,
+        language: action.payload.language
       };
     }
     case FETCH_DATA_FAILED: {

@@ -22,6 +22,10 @@ const fetchFailed = err => {
 };
 
 export const fetchData = dispatch => async dispatch => {
+  let language = navigator.language || navigator.userLanguage;
+  language = language.slice(0, 2);
+
+  if (language !== 'es') language = 'en';
   dispatch({
     type: FETCH_DATA
   });
@@ -32,7 +36,7 @@ export const fetchData = dispatch => async dispatch => {
 
   res = await axios.get(pagesEndPoint);
   const pages = res.data;
-  dispatch(fetchSuccess({ posts, pages }));
+  dispatch(fetchSuccess({ posts, pages, language }));
   // axios
   //   .get(postsEndPoint)
   //   .then(res => {
