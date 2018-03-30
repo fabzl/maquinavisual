@@ -61,6 +61,19 @@ h2 {
   font-size: 3.6rem;
 }
 
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+
+
+
+
+
+
 /* 
 html, body, #root {
   height: 100%;

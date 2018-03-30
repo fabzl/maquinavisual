@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 import VideoHome from '../components/VideoHome';
 import Grid from '../components/Grid';
 
-import globalStyles from '../global-styles';
 
 const AllWork = styled.div`
   padding: 0;
