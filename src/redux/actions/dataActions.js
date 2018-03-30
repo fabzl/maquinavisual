@@ -1,5 +1,10 @@
 import axios from 'axios';
-import { FETCH_DATA, FETCH_DATA_SUCCESS, FETCH_DATA_FAILED } from '../types';
+import {
+  FETCH_DATA,
+  FETCH_DATA_SUCCESS,
+  FETCH_DATA_FAILED,
+  CHANGE_LANG
+} from '../types';
 
 // import { works } from '../../data';
 
@@ -45,4 +50,11 @@ export const fetchData = dispatch => async dispatch => {
   //     dispatch(fetchSuccess(items));
   //   })
   //   .catch(err => dispatch(fetchFailed(err)));
+};
+
+export const changeLang = value => {
+  return {
+    type: CHANGE_LANG,
+    payload: value
+  };
 };

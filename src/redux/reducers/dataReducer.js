@@ -1,4 +1,9 @@
-import { FETCH_DATA, FETCH_DATA_SUCCESS, FETCH_DATA_FAILED } from '../types';
+import {
+  FETCH_DATA,
+  FETCH_DATA_SUCCESS,
+  FETCH_DATA_FAILED,
+  CHANGE_LANG
+} from '../types';
 
 const initialState = {
   loading: false,
@@ -23,6 +28,9 @@ export default (state = initialState, action) => {
     }
     case FETCH_DATA_FAILED: {
       return { ...state, loading: false, error: action.error };
+    }
+    case CHANGE_LANG: {
+      return { ...state, language: action.payload };
     }
     default:
       return state;
