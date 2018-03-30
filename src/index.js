@@ -6,12 +6,30 @@ import thunk from 'redux-thunk';
 
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-import './style.css';
+import './index.css';
 import reducers from './redux/reducers';
 
 const options = [reducers, {}];
 
 const middleware = [applyMiddleware(thunk)];
+
+// // Si el browser es Chrome y no es movil
+// var ua = navigator.userAgent;
+// if (
+//   !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(
+//     ua
+//   )
+// ) {
+//   if (
+//     navigator.userAgent.indexOf('Chrome') &&
+//     process.env.NODE_ENV === 'development'
+//   ) {
+//     middleware.push(
+//       window.__REDUX_DEVTOOLS_EXTENSION__ &&
+//         window.__REDUX_DEVTOOLS_EXTENSION__()
+//     );
+//   }
+// }
 
 options.push(compose(...middleware));
 

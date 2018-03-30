@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import logo from './logo_loader.svg';
+import logo from '../img/logo_loader.svg';
 // @keyframes fadeOutCurtain {
 // 	from {
 // 		opacity: 1;

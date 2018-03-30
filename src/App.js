@@ -20,7 +20,7 @@ import Footer from './components/Footer';
 
 import { fetchData } from './redux/actions';
 
-// wrapper styles
+// wrapper styles 
 const Wrap = styled.div`
   display: flex;
   min-height: 100vh;
@@ -29,6 +29,7 @@ const Wrap = styled.div`
   background: #040029;
   /* overflow: ${props => (props.showVideo ? 'hidden' : 'visible')}; */
 `;
+
 
 class App extends Component {
   componentDidMount() {
@@ -77,8 +78,7 @@ const mapStateToProps = state => {
     scrollY: state.video.scrollY,
     pages: state.data.pages,
     posts: state.data.posts,
-    loading: state.data.loading,
-    language: state.data.language
+    loading: state.data.loading
   };
 };
 
