@@ -46,7 +46,7 @@ const Logo = styled.img`
 `;
 
 const Burger = () => (
-  <svg width="30px" height="30px">
+  <svg width="30px" height="30px" fill="#fff">
     <rect y="7" width="30" height="2" />
     <rect y="15" width="30" height="2" />
     <rect y="23" width="30" height="2" />
