@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link, NavLink } from 'react-router-dom';
 
-import logo from './logo_main_white.svg';
+import logo from '../img/logo_main_white.svg';
 
 const Nav = styled.nav`
   position: absolute;
