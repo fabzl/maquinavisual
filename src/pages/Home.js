@@ -34,7 +34,7 @@ const LinkTo = styled(Link)`
 
 const Home = props => (
   <div>
-    <VideoHome title="Where imagination meets reality" />
+    <VideoHome title="Grandes historias para gente pequeña" />
     <Grid data={props.data} />
     <AllWork>
       <H3>
