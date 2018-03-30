@@ -6,7 +6,7 @@ import thunk from 'redux-thunk';
 
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-import './index.css';
+import './style.css';
 import reducers from './redux/reducers';
 
 const options = [reducers, {}];
