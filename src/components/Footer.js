@@ -1,6 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { Link, NavLink } from 'react-router-dom';
+
+import logo from '../img/logo_footer.svg';
+
+
+
+const Logo = styled.img`
+  width: 25%;
+  min-width: 350px;
+  margin: 0 auto;
+  display: flex;
+`;
+
 const Wrap = styled.footer`
   z-index: 50;
   padding: 3.5rem 4rem 2rem;
@@ -106,7 +119,9 @@ const smoothScroll = () => {
 
 const Footer = () => (
   <Wrap>
-    <Content>
+       <Logo src={logo} />
+    <Content>   
+     
       <Social>
         <SocialLink href="http://www.facebook.com">
           <i className="fab fa-facebook-f fa-2x" />
@@ -123,7 +138,8 @@ const Footer = () => (
       </Social>
 
       <General>
-        <H4>Consultas generales</H4>
+        {/* <H4>Consultas generales</H4> */}
+        
         <Links>
           <LinkTo href="tel:+56982000000">
             <i className="fas fa-mobile-alt fa-2x" /> +56 9 8200 0000

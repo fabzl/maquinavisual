@@ -26,7 +26,7 @@ const Wrap = styled.div`
   min-height: 100vh;
   flex-direction: column;
   height: 100%;
-  background: #040029;
+  background: #1e1814;;
   /* overflow: ${props => (props.showVideo ? 'hidden' : 'visible')}; */
 `;
 

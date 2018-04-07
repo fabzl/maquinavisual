@@ -9,7 +9,7 @@ import Grid from '../components/Grid';
 
 const AllWork = styled.div`
   padding: 0;
-  background: #33345b;
+  background: linear-gradient(135deg, rgba(205,73,82,1) 0%,rgba(215,56,117,1) 100%);
   text-align: center;
 `;
 
@@ -23,12 +23,13 @@ const H3 = styled.h3`
 `;
 
 const LinkTo = styled(Link)`
-  color: #fff;
+  color: #f1f1f2;
   text-decoration: none;
   display: block;
   padding: 55px 0 45px;
+  transition: all 1s;
   &:hover {
-    color: #e70895;
+    color: #1e1814;;
   }
 `;
 

@@ -13,11 +13,13 @@ const Nav = styled.nav`
   display: flex;
   /* font-size: 16px; */
   /* justify-content: space-around; */
+
+  background: linear-gradient(to bottom, rgba(0,0,255,0.2) 0%,rgba(0,0,0,0) 100%);
 `;
 
 const LinkTo = styled(NavLink)`
   text-indent: 0;
-  color: #fff;
+  color: #f1f1f2;
   text-decoration: none;
   display: inline-block;
   font-size: 1.2em;
@@ -43,10 +45,11 @@ const LogoContainer = styled.div`
 
 const Logo = styled.img`
   width: 80%;
+  min-width:350px;
 `;
 
 const Burger = () => (
-  <svg width="30px" height="30px" fill="#fff">
+  <svg width="30px" height="30px" fill="#f1f1f2">
     <rect y="7" width="30" height="2" />
     <rect y="15" width="30" height="2" />
     <rect y="23" width="30" height="2" />
@@ -54,7 +57,7 @@ const Burger = () => (
 );
 
 const BurgerLink = styled.a`
-  color: #fff;
+  color: #f1f1f2;
   margin: 0 20px;
   @media (min-width: 740px) {
     display: none;
