@@ -64,6 +64,7 @@ const H4 = styled.h4`
   font-size: 18px;
   font-style: italic;
   text-transform: uppercase;
+  letter-spacing:130%;
 `;
 
 const BackToTop = styled.div`
@@ -135,7 +136,7 @@ const Footer = () => (
       </Social>
 
       <General>
-        <H4>Storytelling & 3D</H4>
+        <H4>3D animation </H4>
         <div className='end-line-footer'>
 						<span className='line'></span>
 						<h6 data-translatable >© {(new Date().getFullYear())} MAQUINA VISUAL SOME RIGHTS RESERVED.</h6>

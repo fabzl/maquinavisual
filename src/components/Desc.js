@@ -8,7 +8,7 @@ const Section = styled.div`
 const Container = styled.div`
   max-width: 600px;
   margin: 0 auto;
-  color: #fff;
+  color: #f1f1f2;
   text-align: center;
 `;
 

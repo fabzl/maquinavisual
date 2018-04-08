@@ -27,7 +27,13 @@ const H2 = styled.h2`
   text-transform: uppercase;
   line-height: 1em;
   margin: 2rem 0 0.6em;
-  color: #1e1814;
+ 
+  letter-spacing:130%;
+  text-align:center;
+
+  &.dark {
+    color: #1e1814;
+  }
 `;
 
 
@@ -37,19 +43,25 @@ const Laurel = styled.div`
   text-transform: uppercase;
   line-height: 1em;
   margin: 2rem 0 0.6em;
-  
+  color: #1e1814;
+  max-width: 180px;
+  text-align:center;
+  overflow:visible;
+  position:relative;
 
   &:after {
-  background-image: url('{../img/laurels_black.svg}')no-repeat;
-  content:'';
-  top: 10px;
-  right: 5px;
-  position: absolute;
-  display: inline-block;
-  width: 300px;
-  height: 200px;
+        /// this doesnt worrkrksksksksks!!!
+    background: url('../img/laurels_black.svg')no-repeat cover;
+    content:'';
+    position: absolute;
+    display: inline-block;
+    width: 200px;
+    top:-50%;
+    left:-50%;
+    transform: translateX(50%) translateY(50%);
+    height: 200px;
+    // border:1px solid green;
   }
- 
 `;
 
 
@@ -93,7 +105,7 @@ const Box = styled.div`
 // `;
 
 
-const Item = ({ item }) => <Laurel>{item}</Laurel> ;
+const Item = ({ item }) => <Laurel src="{laurel}">{item}</Laurel> ;
 
 const About = props => {
   const {
@@ -121,7 +133,7 @@ const About = props => {
       <Prizes>
         <Box>
           <div>
-            <H2>Premios</H2>
+            <H2 className="dark">Premios</H2>
             {premiosArray.map(item => <div><Item item={item} /></div>)}
           </div>
         </Box>

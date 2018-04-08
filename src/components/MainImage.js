@@ -12,7 +12,7 @@ const Wrap = styled.div`
   align-items: center;
   background: url(${props => props.src}) no-repeat center;
   background-size: cover;
-  color: #fff;
+  color: #f1f1f2;
   font-size: 16px;
   & a:first-child:hover {
     background: linear-gradient(
@@ -51,7 +51,7 @@ const H1 = styled.h1`
 `;
 
 const Arrow = styled(Link)`
-  color: #fff;
+  color: #f1f1f2;
   height: 100%;
   align-items: center;
   display: flex;

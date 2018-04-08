@@ -9,6 +9,9 @@ const Wrap = styled.div`
   & div:last-child:nth-child(odd) {
     grid-column: 1 / 3;
   }
+  &.full {
+    grid-column: 3 / 3;
+  }
 `;
 
 class Grid extends Component {

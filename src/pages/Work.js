@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Grid from '../components/Grid';
 
-const Work = props => <Grid data={props.data} link />;
+const Work = props => <Grid className="full" data={props.data} link />;
 
 const mapStateToProps = state => {
   return {

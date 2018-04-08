@@ -5,7 +5,7 @@ import { Link, NavLink } from 'react-router-dom';
 import logo from '../img/logo_main_white.svg';
 
 const Nav = styled.nav`
-  position: absolute;
+  position: fixed;
   width: 100%;
   align-items: center;
   z-index: 900;
@@ -13,8 +13,7 @@ const Nav = styled.nav`
   display: flex;
   /* font-size: 16px; */
   /* justify-content: space-around; */
-
-  background: linear-gradient(to bottom, rgba(0,0,255,0.2) 0%,rgba(0,0,0,0) 100%);
+  background: linear-gradient(to bottom, rgba(0,0,120,0.3) 0%,rgba(0,0,0,0) 100%);
 `;
 
 const LinkTo = styled(NavLink)`
@@ -28,11 +27,10 @@ const LinkTo = styled(NavLink)`
   line-height: 1em;
   text-transform: uppercase;
   font-style: italic;
+  transition: 1s all;
   &.active,
   &:hover {
-    /* font-weight: bold; */
-    /* color: red; */
-    color: #e70895;
+    color:	: #d73875;
   }
   @media (max-width: 740px) {
     display: none;
@@ -71,7 +69,7 @@ export default () => (
         <Logo src={logo} />
       </Link>
     </LogoContainer>
-    
+
       <LinkTo to="/reel">Reel</LinkTo>
 
       <LinkTo to="/work">Work</LinkTo>
