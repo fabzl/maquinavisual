@@ -1,10 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Link, NavLink } from 'react-router-dom';
-
 import logo from '../img/logo_footer.svg';
-
 
 
 const Logo = styled.img`
@@ -44,13 +41,13 @@ const Social = styled.div`
 
 const SocialLink = styled.a`
   text-decoration: none;
-  color: #fff;
+  color: #f1f1f2;
 `;
 
 const General = styled.div`
   flex: 3;
   text-align: center;
-  color: #fff;
+  color: #f1f1f2;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -82,7 +79,7 @@ const LinkTo = styled.a`
   /* padding: 5px 0 10px;
   margin: 5px 0; */
   font-weight: 500;
-  color: #fff;
+  color: #f1f1f2;
   text-decoration: none;
   font-size: 16px;
   padding-left: 10px;
@@ -91,7 +88,7 @@ const LinkTo = styled.a`
 `;
 
 const ToTop = styled.a`
-  color: #fff;
+  color: #f1f1f2;
   font-size: 14px;
   display: inline-block;
   overflow: hidden;
@@ -123,29 +120,32 @@ const Footer = () => (
     <Content>   
      
       <Social>
-        <SocialLink href="http://www.facebook.com">
+        <SocialLink href="https://www.facebook.com/pg/maquinavisual">
           <i className="fab fa-facebook-f fa-2x" />
         </SocialLink>
-        <SocialLink href="http://www.facebook.com">
+        <SocialLink href="http://www.instagram.com/maquinavisual">
           <i className="fab fa-instagram fa-2x" />
         </SocialLink>
-        <SocialLink href="http://www.facebook.com">
+        <SocialLink href="http://www.linkeid.com/maquinavisual">
           <i className="fab fa-linkedin-in fa-2x" />
         </SocialLink>
-        <SocialLink href="http://www.facebook.com">
+        <SocialLink href="https://vimeo.com/maquinavisual">
           <i className="fab fa-vimeo-v fa-2x" />
         </SocialLink>
       </Social>
 
       <General>
-        {/* <H4>Consultas generales</H4> */}
-        
+        <H4>Storytelling & 3D</H4>
+        <div className='end-line-footer'>
+						<span className='line'></span>
+						<h6 data-translatable >© {(new Date().getFullYear())} MAQUINA VISUAL SOME RIGHTS RESERVED.</h6>
+				</div>
         <Links>
           <LinkTo href="tel:+56982000000">
-            <i className="fas fa-mobile-alt fa-2x" /> +56 9 8200 0000
+            <i className="fas fa-mobile-alt fa-2x" /> +56 9 7623 4946
           </LinkTo>
-          <LinkTo href="mailto:reclamos@fifa.com">
-            <i className="far fa-envelope fa-2x" /> reclamos@fifa.com
+          <LinkTo href="mailto:contacto@maquinavisual.com?subject=Contacto%20desde%20Maquina%20Visual">
+            <i className="far fa-envelope fa-2x" />contacto@maquinavisual.com
           </LinkTo>
         </Links>
       </General>

@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 import VideoHome from '../components/VideoHome';
 import Grid from '../components/Grid';
 
-
 const AllWork = styled.div`
   padding: 0;
   background: linear-gradient(135deg, rgba(205,73,82,1) 0%,rgba(215,56,117,1) 100%);
@@ -18,7 +17,7 @@ const H3 = styled.h3`
   font-weight: 700;
   font-style: italic;
   line-height: 1.3em;
-  font-size: 3.6rem;
+  font-size: 3.2rem;
   text-transform: uppercase;
 `;
 
@@ -39,7 +38,7 @@ const Home = props => (
     <Grid data={props.data} />
     <AllWork>
       <H3>
-        <LinkTo to="/work">View all work</LinkTo>
+        <LinkTo to="/work">Ver todos los trabajos</LinkTo>
       </H3>
     </AllWork>
   </div>

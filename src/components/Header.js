@@ -71,15 +71,17 @@ export default () => (
         <Logo src={logo} />
       </Link>
     </LogoContainer>
+    
+      <LinkTo to="/reel">Reel</LinkTo>
 
-    <LinkTo to="/work">Work</LinkTo>
+      <LinkTo to="/work">Work</LinkTo>
 
-    <LinkTo to="/about">About</LinkTo>
+      <LinkTo to="/about">About</LinkTo>
 
-    <LinkTo to="/contact">Contact</LinkTo>
+      <LinkTo to="/contact">Contact</LinkTo>
 
-    <BurgerLink>
-      <Burger />
-    </BurgerLink>
+      <BurgerLink>
+        <Burger />
+      </BurgerLink>
   </Nav>
 );

@@ -1,18 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
 import logo from '../img/logo_loader.svg';
-// @keyframes fadeOutCurtain {
-// 	from {
-// 		opacity: 1;
 
-// 	}
-// 	to {
-// 		opacity: 0;
-// 	}
 
-// }
+
 
 const Loader = styled.div`
+
+
+@keyframes fadeOutCurtain {
+	from {
+		opacity: 1;
+
+	}
+	to {
+		opacity: 0;
+	}
+
+}
   position: fixed;
   top: 0;
   left: 0;

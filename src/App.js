@@ -9,11 +9,12 @@ import Work from './pages/Work';
 import ShowWork from './pages/ShowWork';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import Reel from './pages/Reel';
 
 // Components
 import Header from './components/Header';
 import Loader from './components/Loader';
-import VideoPlayer from './components/VideoPlayer';
+// import VideoPlayer from './components/VideoPlayer';
 import Modal from './components/Modal';
 import Fade from './components/Fade';
 import Footer from './components/Footer';
@@ -61,6 +62,7 @@ class App extends Component {
               <Route exact path="/work/:link" component={ShowWork} />
               <Route exact path="/about" component={About} />
               <Route exact path="/contact" component={Contact} />
+              <Route exact path="/reel" component={Reel} />
             </div>
 
             {/* <VideoPlayer /> */}
