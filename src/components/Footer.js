@@ -136,7 +136,7 @@ const Footer = () => (
       </Social>
 
       <General>
-        <H4>3D animation </H4>
+        <H4>3D animation & post production</H4>
         <div className='end-line-footer'>
 						<span className='line'></span>
 						<h6 data-translatable >© {(new Date().getFullYear())} MAQUINA VISUAL SOME RIGHTS RESERVED.</h6>

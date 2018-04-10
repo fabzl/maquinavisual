@@ -30,7 +30,7 @@ const LinkTo = styled(NavLink)`
   transition: 1s all;
   &.active,
   &:hover {
-    color:	: #d73875;
+    color:	: #cd4952;
   }
   @media (max-width: 740px) {
     display: none;

@@ -69,8 +69,8 @@ class Modal extends Component {
           <ReactPlayer
             url="https://vimeo.com/247535876"
             playing={true}
-            width="90%"
-            height="90%"
+            width="100%"
+            height="auto"
           />
         </Content>
       </Overlay>

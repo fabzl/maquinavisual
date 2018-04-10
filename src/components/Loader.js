@@ -2,22 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 import logo from '../img/logo_loader.svg';
 
-
+ import { keyframes } from 'styled-components';
+import { bounce } from 'react-animations';
+ 
+const bounceAnimation = keyframes`${bounce}`;
+ 
 
 
 const Loader = styled.div`
 
 
-@keyframes fadeOutCurtain {
-	from {
-		opacity: 1;
-
-	}
-	to {
-		opacity: 0;
-	}
-
-}
   position: fixed;
   top: 0;
   left: 0;
@@ -39,7 +33,7 @@ const Loader = styled.div`
     cursor: pointer;
     grid-column: 2 / 2;
     grid-row: 2 / 2;
-
+    animation: 1s ${bounceAnimation};
     flex-grow: 2;
     display: flex;
     align-self: center;

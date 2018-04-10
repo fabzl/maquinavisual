@@ -54,7 +54,7 @@ const Content = styled.div`
     font-weight: 700;
     font-style: italic;
     text-transform: uppercase;
-    color: #e70895;
+    color: #cd4952;
     padding: 0.33em 10px 5px;
     margin: 0;
     line-height: 1em;
@@ -78,7 +78,7 @@ const Middle = styled.div`
 `;
 
 const LinkTo = styled(Link)`
-  color: #fff;
+  color: #f1f1f2;
   text-decoration: none;
   display: block;
   height: 100%;
@@ -112,3 +112,12 @@ class Box extends Component {
 }
 
 export default connect(null, { playVideo })(Box);
+
+
+// // maquina visual schema 
+
+// $mblack							: #1e1814;
+// $mgray 							: #282828;
+// $mwhite 						: #f1f1f2;
+// $red-gradient1 					: #d73875;
+// $red-gradient2 					: #cd4952;
