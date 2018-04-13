@@ -56,13 +56,16 @@ class Reel extends Component {
     // enableScroll();
     // window.scrollTo(0, this.props.scrollY);
   }
+  goBackHome() {
+      console.log("got to click")
+  }
 
   render() {
     // <ReactPlayer url="https://vimeo.com/247535876" playing={true} />
     return (
       <Overlay {...this.props}>
         <Content>
-          <CloseButton onClick={this.props.stopVideo}>
+          <CloseButton to="/work" onClick={this.props.goBackHome}>
             <i className="fas fa-times fa-3x" />
           </CloseButton>
 

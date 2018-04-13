@@ -2,11 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 import logo from '../img/logo_loader.svg';
 
- import { keyframes } from 'styled-components';
+import { keyframes } from 'styled-components';
 import { bounce } from 'react-animations';
  
+
+
+import { merge, zoomIn, fadeIn } from 'react-animations';
+
+
 const bounceAnimation = keyframes`${bounce}`;
- 
+
+const Zoom = merge(zoomIn, fadeIn);
 
 
 const Loader = styled.div`
@@ -33,7 +39,7 @@ const Loader = styled.div`
     cursor: pointer;
     grid-column: 2 / 2;
     grid-row: 2 / 2;
-    animation: 1s ${bounceAnimation};
+    animation: 1s ${Zoom};
     flex-grow: 2;
     display: flex;
     align-self: center;

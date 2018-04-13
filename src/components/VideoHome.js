@@ -45,7 +45,8 @@ const Text = styled.div`
   max-width: 1600px;
   text-align: center;
   margin: 0 auto;
-  color: #fff;
+
+  color: ${props => (props.fontColor ? '#fff' : '#fff')};
 `;
 
 const H2 = styled.h2`
@@ -88,7 +89,7 @@ const H2 = styled.h2`
 export default props => {
   let video = 'video/videoIntroXX.mp4';
   let videoLink = video.replace('XX', props.contact ? '02' : '03');
-
+  console.log(props.fontColor);
   return (
     <Section {...props}>
       <VideoContainer>

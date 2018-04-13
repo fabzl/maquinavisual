@@ -61,7 +61,7 @@ const General = styled.div`
 const H4 = styled.h4`
   font-weight: 500;
   margin: 0;
-  font-size: 18px;
+  font-size: 14px;
   font-style: italic;
   text-transform: uppercase;
   letter-spacing:130%;

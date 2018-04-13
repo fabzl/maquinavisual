@@ -2,19 +2,29 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import Box from './Box';
 
-const Wrap = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-auto-rows: 430px;
-  & div:last-child:nth-child(odd) {
-    grid-column: 1 / 3;
-  }
-  &.full {
-    grid-column: 3 / 3;
-  }
-`;
+
+
 
 class Grid extends Component {
+  state = {
+    column: '1fr'
+  }
+
+
+  
+
+  setfullWidth = () => {
+    
+    
+    console.log("set full width");
+    const Wrap = styled.div`
+    grid-template-columns: 1fr 3fr ;
+    grid-auto-rows: 530px;
+  `;
+
+  }
+
+
   renderBoxes = () => {
     return this.props.data.map((item, key) => {
       // Si no existe acf implementado
@@ -38,6 +48,21 @@ class Grid extends Component {
   };
 
   render() {
+    const Wrap = styled.div`
+      display: grid;
+      
+      
+      grid-template-columns: ${props => !props.large ? '1fr 2fr' : '1fr'};
+      grid-auto-rows: 430px;
+
+
+      & div:last-child:nth-child(odd) {
+        grid-column: 1 / 3;
+      }
+      &.full {
+        grid-column: 3 / 3;
+      }
+    `;
     return <Wrap>{this.renderBoxes()}</Wrap>;
   }
 }

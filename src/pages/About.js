@@ -101,7 +101,6 @@ const Box = styled.div`
 // const Laurel = styled.img`
 //     width: 80%;
 //     max-width:350px;
-
 // `;
 
 

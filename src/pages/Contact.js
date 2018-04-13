@@ -4,6 +4,6 @@ import VideoHome from '../components/VideoHome';
 
 export default () => (
   <div>
-    <VideoHome contact title="Hagamos cosas increíbles juntos" />
+    <VideoHome contact fontColor title="Hagamos cosas increíbles" />
   </div>
 );
