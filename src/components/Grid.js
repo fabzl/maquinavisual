@@ -11,10 +11,8 @@ class Grid extends Component {
   }
 
 
-  
 
   setfullWidth = () => {
-    
     
     console.log("set full width");
     const Wrap = styled.div`
@@ -52,7 +50,7 @@ class Grid extends Component {
       display: grid;
       
       
-      grid-template-columns: ${props => !props.large ? '1fr 2fr' : '1fr'};
+      grid-template-columns: ${props => !props.large ? '1fr ' : '1fr 2fr'};
       grid-auto-rows: 430px;
 
 

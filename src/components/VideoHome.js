@@ -62,12 +62,18 @@ const H2 = styled.h2`
   font-style: italic;
   text-align: center;
 
+
+  text-shadow: 0px 1px 0px #999;
+
+
+
   &::after,
   &::before {
     content: '';
     display: block;
     width: 0;
-    border-top: 1px solid #fff;
+   
+    border-top: 3px solid #fff;
     transition: width 0.6s 0.2s, left 0.6s 0.2s, right 0.6s 0.2s;
     transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
     position: absolute;

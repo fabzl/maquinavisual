@@ -27,7 +27,6 @@ const H2 = styled.h2`
   text-transform: uppercase;
   line-height: 1em;
   margin: 2rem 0 0.6em;
- 
   letter-spacing:130%;
   text-align:center;
 
