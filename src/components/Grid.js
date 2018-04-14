@@ -12,13 +12,18 @@ class Grid extends Component {
 
 
 
+
   setfullWidth = () => {
     
+    
     console.log("set full width");
-    const Wrap = styled.div`
-    grid-template-columns: 1fr 3fr ;
-    grid-auto-rows: 530px;
-  `;
+    console.log(this.props);
+    
+    if(this.props.large) {
+      return true;
+    }else{
+      return false;
+    }
 
   }
 
@@ -47,13 +52,9 @@ class Grid extends Component {
 
   render() {
     const Wrap = styled.div`
-      display: grid;
-      
-      
-      grid-template-columns: ${props => !props.large ? '1fr ' : '1fr 2fr'};
+      display: grid;  
+      grid-template-columns: ${this.setfullWidth() ? '1fr' : '1fr 2fr'};
       grid-auto-rows: 430px;
-
-
       & div:last-child:nth-child(odd) {
         grid-column: 1 / 3;
       }
@@ -61,6 +62,7 @@ class Grid extends Component {
         grid-column: 3 / 3;
       }
     `;
+   
     return <Wrap>{this.renderBoxes()}</Wrap>;
   }
 }

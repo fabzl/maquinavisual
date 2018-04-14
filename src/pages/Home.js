@@ -35,7 +35,7 @@ const LinkTo = styled(Link)`
 const Home = props => (
   <div>
     <VideoHome title="Grandes historias para gente pequeña" />
-    <Grid data={props.data} />
+    <Grid data={props.data}/>
     <AllWork>
       <H3>
         <LinkTo to="/work">Ver todos los trabajos</LinkTo>
