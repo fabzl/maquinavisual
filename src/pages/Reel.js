@@ -6,6 +6,9 @@ import ReactPlayer from 'react-player';
 import { enableScroll, disableScroll } from '../helpers';
 import { stopVideo } from '../redux/actions';
 
+import { Link, NavLink } from 'react-router-dom';
+
+
 const Overlay = styled.div`
   position: fixed; /* Sit on top of the page content */
   width: 100%; /* Full width (cover the whole page) */
@@ -57,7 +60,7 @@ class Reel extends Component {
     // window.scrollTo(0, this.props.scrollY);
   }
   goBackHome() {
-      console.log("got to click")
+      console.log("got to click");
   }
 
   render() {
@@ -65,15 +68,19 @@ class Reel extends Component {
     return (
       <Overlay {...this.props}>
         <Content>
-          <CloseButton to="/work" onClick={this.props.goBackHome}>
+          
+        <Link to="/">
+ 
+          <CloseButton>
             <i className="fas fa-times fa-3x" />
           </CloseButton>
-
+          </Link> 
+ 
           <ReactPlayer
             url="https://vimeo.com/247535876"
             playing={true}
-            width="90%"
-            height="90%"
+            width="95%"
+            height="60%"
           />
         </Content>
       </Overlay>
