@@ -1,8 +1,9 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Link, NavLink } from 'react-router-dom';
+import React from "react";
+import styled from "styled-components";
+import { Link, NavLink } from "react-router-dom";
+import LanguageSelector from "./LanguageSelector";
 
-import logo from '../img/logo_main_white.svg';
+import logo from "../img/logo_main_white.svg";
 
 const Nav = styled.nav`
   position: fixed;
@@ -13,7 +14,11 @@ const Nav = styled.nav`
   display: flex;
   /* font-size: 16px; */
   /* justify-content: space-around; */
-  background: linear-gradient(to bottom, rgba(0,0,120,0.3) 0%,rgba(0,0,0,0) 100%);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 120, 0.3) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
 `;
 
 const LinkTo = styled(NavLink)`
@@ -26,7 +31,6 @@ const LinkTo = styled(NavLink)`
   /* padding: 20px 10px 5px; */
   line-height: 1em;
   text-transform: uppercase;
-  font-style: italic;
   transition: 1s all;
   &.active,
   &:hover {
@@ -43,7 +47,7 @@ const LogoContainer = styled.div`
 
 const Logo = styled.img`
   width: 80%;
-  min-width:350px;
+  min-width: 350px;
 `;
 
 const Burger = () => (
@@ -70,16 +74,17 @@ export default () => (
       </Link>
     </LogoContainer>
 
-      <LinkTo to="/reel">Reel</LinkTo>
+    <LinkTo to="/reel">Reel</LinkTo>
 
-      <LinkTo to="/work">Work</LinkTo>
+    <LinkTo to="/work">Work</LinkTo>
 
-      <LinkTo to="/about">About</LinkTo>
+    <LinkTo to="/about">About</LinkTo>
 
-      <LinkTo to="/contact">Contact</LinkTo>
+    <LinkTo to="/contact">Contact</LinkTo>
+    <LanguageSelector />
 
-      <BurgerLink>
-        <Burger />
-      </BurgerLink>
+    <BurgerLink>
+      <Burger />
+    </BurgerLink>
   </Nav>
 );

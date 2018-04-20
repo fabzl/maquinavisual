@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 const Section = styled.section`
   height: ${props => (props.contact ? 80 : 100)}vh;
@@ -46,11 +46,11 @@ const Text = styled.div`
   text-align: center;
   margin: 0 auto;
 
-  color: ${props => (props.fontColor ? '#fff' : '#fff')};
+  color: ${props => (props.fontColor ? "#fff" : "#fff")};
 `;
 
 const H2 = styled.h2`
-  font-size: 122px;
+  font-size: 62px;
   line-height: 0.9em;
   margin: 0 auto;
   padding: 0 20px;
@@ -61,18 +61,14 @@ const H2 = styled.h2`
   font-weight: 700;
   font-style: italic;
   text-align: center;
-
-
   text-shadow: 0px 1px 0px #999;
-
-
 
   &::after,
   &::before {
-    content: '';
+    content: "";
     display: block;
     width: 0;
-   
+
     border-top: 3px solid #fff;
     transition: width 0.6s 0.2s, left 0.6s 0.2s, right 0.6s 0.2s;
     transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
@@ -93,8 +89,8 @@ const H2 = styled.h2`
 `;
 
 export default props => {
-  let video = 'video/videoIntroXX.mp4';
-  let videoLink = video.replace('XX', props.contact ? '02' : '03');
+  let video = "video/videoIntroXX.mp4";
+  let videoLink = video.replace("XX", props.contact ? "02" : "03");
   console.log(props.fontColor);
   return (
     <Section {...props}>

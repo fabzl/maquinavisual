@@ -1,9 +1,9 @@
-import React from 'react';
-import styled from 'styled-components';
-import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import React from "react";
+import styled from "styled-components";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
-import { playVideo } from '../redux/actions';
+import { playVideo } from "../redux/actions";
 
 const Wrap = styled.div`
   display: flex;
@@ -41,7 +41,7 @@ const Wrap = styled.div`
 
 const H1 = styled.h1`
   /* margin-bottom: 0; */
-  font-size: 62px;
+  font-size: 23px;
   line-height: 1em;
   text-transform: uppercase;
   font-weight: 700;
