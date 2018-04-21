@@ -5,7 +5,7 @@ const LanguageSelector = styled.div``;
 
 const H2 = styled.div`
 
-
+  text-align:center;
   color: #fff;
   border: 1px solid;
   padding: 5px;
@@ -22,10 +22,10 @@ const H2 = styled.div`
   }
 `;
 const checkCurrentLanguage = () => {
-  return {};
+  return "esp";
 };
 const chooseLanguage = () => {
-  return {};
+  return;
 };
 
 export default props => {
@@ -34,7 +34,9 @@ export default props => {
   return (
     <LanguageSelector {...props}>
       <H2 onClick={this.chooseLanguage}>ESP</H2>
-      <H2 className="is-hidden">ENG</H2>
+      <H2 onClick={this.chooseLanguage} className="is-hidden">
+        ENG
+      </H2>
     </LanguageSelector>
   );
 };
