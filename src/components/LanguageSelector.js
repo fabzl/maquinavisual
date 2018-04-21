@@ -1,24 +1,21 @@
-import React from 'react';
-import styled from 'styled-components';
-import { connect } from 'react-redux';
+import React from "react";
+import styled from "styled-components";
+import { connect } from "react-redux";
 
-import { changeLang } from '../redux/actions';
+import { changeLang } from "../redux/actions";
 
 const H2 = styled.div`
   text-transform: uppercase;
   cursor: pointer;
   user-select: none;
   text-align: center;
-  color: #fff;
+  color: #f1f1f2;
   border: 1px solid;
   padding: 5px;
   padding-top: 8px;
   margin-right: 50px;
   &:hover {
     background-color: #f1f1f2;
-  }
-  &.is-hidden {
-    display: none;
   }
   &:both {
     border-top: none;
@@ -28,7 +25,7 @@ const H2 = styled.div`
 // () => props.changeLang()
 const LanguageSelector = props => (
   <H2 onClick={() => props.changeLang()}>
-    {props.language === 'en' ? 'es' : 'en'}
+    {props.language === "en" ? "es" : "en"}
   </H2>
 );
 

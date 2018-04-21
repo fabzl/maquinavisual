@@ -1,11 +1,11 @@
-import React from 'react';
-import styled from 'styled-components';
-import { connect } from 'react-redux';
-import { Link, NavLink } from 'react-router-dom';
-import LanguageSelector from './LanguageSelector';
+import React from "react";
+import styled from "styled-components";
+import { connect } from "react-redux";
+import { Link, NavLink } from "react-router-dom";
+import LanguageSelector from "./LanguageSelector";
 
-import translations from '../translations';
-import logo from '../img/logo_main_white.svg';
+import translations from "../translations";
+import logo from "../img/logo_main_white.svg";
 
 const Nav = styled.nav`
   position: fixed;
@@ -30,16 +30,12 @@ const LinkTo = styled(NavLink)`
   display: inline-block;
   font-size: 1.2em;
   margin: 0 20px;
-  /* padding: 20px 10px 5px; */
   line-height: 1em;
   text-transform: uppercase;
   transition: 1s all;
   &.active,
   &:hover {
     color:	: #cd4952;
-  }
-  @media (max-width: 740px) {
-    display: none;
   }
 `;
 
@@ -61,10 +57,32 @@ const Burger = () => (
 );
 
 const BurgerLink = styled.a`
+  z-index: 50000;
   color: #f1f1f2;
   margin: 0 20px;
   @media (min-width: 740px) {
     display: none;
+  }
+`;
+
+const NavContainer = styled.div`
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+  z-index: 900;
+  flex-direction: row;
+  display: flex;
+
+  @media (max-width: 740px) {
+    top: 0;
+    position: fixed;
+    width: 100vw;
+    height: 100%;
+    z-index: 3000;
+    background: rgba(0, 1, 40, 0.85);
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-around;
   }
 `;
 
@@ -75,16 +93,18 @@ const Header = props => (
         <Logo src={logo} />
       </Link>
     </LogoContainer>
+    <NavContainer>
+      <LinkTo to="/reel">{translations.header.reel[props.language]}</LinkTo>
 
-    <LinkTo to="/reel">{translations.header.reel[props.language]}</LinkTo>
+      <LinkTo to="/work">{translations.header.work[props.language]}</LinkTo>
 
-    <LinkTo to="/work">{translations.header.work[props.language]}</LinkTo>
+      <LinkTo to="/about">{translations.header.about[props.language]}</LinkTo>
 
-    <LinkTo to="/about">{translations.header.about[props.language]}</LinkTo>
-
-    <LinkTo to="/contact">{translations.header.contact[props.language]}</LinkTo>
-    <LanguageSelector />
-
+      <LinkTo to="/contact">
+        {translations.header.contact[props.language]}
+      </LinkTo>
+      <LanguageSelector />
+    </NavContainer>
     <BurgerLink>
       <Burger />
     </BurgerLink>
