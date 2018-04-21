@@ -21,7 +21,7 @@ import Footer from './components/Footer';
 
 import { fetchData } from './redux/actions';
 
-// wrapper styles 
+// wrapper styles
 const Wrap = styled.div`
   display: flex;
   min-height: 100vh;
@@ -30,7 +30,6 @@ const Wrap = styled.div`
   background: #1e1814;;
   /* overflow: ${props => (props.showVideo ? 'hidden' : 'visible')}; */
 `;
-
 
 class App extends Component {
   componentDidMount() {
@@ -68,7 +67,7 @@ class App extends Component {
             {/* <VideoPlayer /> */}
           </div>
         </Router>
-        <Footer />
+        {/* <Footer /> */}
       </Wrap>
     );
   }

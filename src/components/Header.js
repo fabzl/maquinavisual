@@ -1,11 +1,11 @@
-import React from "react";
-import styled from "styled-components";
-import { connect } from "react-redux";
-import { Link, NavLink } from "react-router-dom";
-import LanguageSelector from "./LanguageSelector";
+import React from 'react';
+import styled from 'styled-components';
+import { connect } from 'react-redux';
+import { Link, NavLink } from 'react-router-dom';
+import LanguageSelector from './LanguageSelector';
 
-import translations from "../translations";
-import logo from "../img/logo_main_white.svg";
+import translations from '../translations';
+import logo from '../img/logo_main_white.svg';
 
 const Nav = styled.nav`
   position: fixed;
@@ -63,8 +63,24 @@ const BurgerLink = styled.a`
   z-index: 50000;
   color: #f1f1f2;
   margin: 0 20px;
+
   @media (min-width: 740px) {
     display: none;
+  }
+
+  rect {
+    transition: 0.5s all;
+  }
+  &.open {
+    rect:nth-child(1) {
+      transform: translate(10px, 0px) rotate(45deg);
+    }
+    rect:nth-child(2) {
+      opacity: 0;
+    }
+    rect:nth-child(3) {
+      transform: translate(-13px, 10px) rotate(-45deg);
+    }
   }
 `;
 
@@ -77,42 +93,60 @@ const NavContainer = styled.div`
   display: flex;
 
   @media (max-width: 740px) {
-    top: 0;
-    position: fixed;
-    width: 100vw;
-    height: 100%;
-    z-index: 3000;
-    background: rgba(0, 1, 40, 0.85);
-    flex-direction: column;
-    text-align: center;
-    justify-content: space-around;
+    display: none;
+    &.active {
+      display: flex;
+      top: 0;
+      position: fixed;
+      width: 100vw;
+      height: 100%;
+      z-index: 3000;
+      background: rgba(0, 1, 40, 0.85);
+      flex-direction: column;
+      text-align: center;
+      justify-content: space-around;
+    }
   }
 `;
 
-const Header = props => (
-  <Nav>
-    <LogoContainer>
-      <Link to="/">
-        <Logo src={logo} />
-      </Link>
-    </LogoContainer>
-    <NavContainer>
-      <LinkTo to="/reel">{translations.header.reel[props.language]}</LinkTo>
+class Header extends React.Component {
+  state = {
+    openMenu: false
+  };
 
-      <LinkTo to="/work">{translations.header.work[props.language]}</LinkTo>
+  openMenu = () => {
+    this.setState({ openMenu: !this.state.openMenu });
+  };
 
-      <LinkTo to="/about">{translations.header.about[props.language]}</LinkTo>
+  render() {
+    const { language } = this.props;
+    return (
+      <Nav>
+        <LogoContainer>
+          <Link to="/">
+            <Logo src={logo} />
+          </Link>
+        </LogoContainer>
+        <NavContainer className={this.state.openMenu && 'active'}>
+          <LinkTo to="/reel">{translations.header.reel[language]}</LinkTo>
 
-      <LinkTo to="/contact">
-        {translations.header.contact[props.language]}
-      </LinkTo>
-      <LanguageSelector />
-    </NavContainer>
-    <BurgerLink>
-      <Burger />
-    </BurgerLink>
-  </Nav>
-);
+          <LinkTo to="/work">{translations.header.work[language]}</LinkTo>
+
+          <LinkTo to="/about">{translations.header.about[language]}</LinkTo>
+
+          <LinkTo to="/contact">{translations.header.contact[language]}</LinkTo>
+          <LanguageSelector />
+        </NavContainer>
+        <BurgerLink
+          onClick={this.openMenu}
+          className={this.state.openMenu && 'open'}
+        >
+          <Burger />
+        </BurgerLink>
+      </Nav>
+    );
+  }
+}
 
 const mapStateToProps = state => {
   return {
