@@ -9,8 +9,6 @@
 # production
 /build
 
-# video
-/public/video
 
 # misc
 .DS_Store
@@ -22,6 +20,3 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-
-style.css~b67b30742f73ed14ee811f4d56c3ebd863aec140
