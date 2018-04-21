@@ -4,10 +4,10 @@ import { connect } from "react-redux";
 
 import logo from "../img/logo_footer.svg";
 import translations from "../translations";
+import { Rotate } from "../styles/globals";
 
 const Logo = styled.img`
   width: 25%;
-
   @media (min-width: 500px) {
     min-width: 350px;
   }
@@ -121,7 +121,10 @@ const smoothScroll = () => {
 
 const Footer = props => (
   <Wrap>
-    <Logo src={logo} />
+    <Rotate>
+      {" "}
+      <Logo src={logo} />
+    </Rotate>
     <Content>
       <Social>
         <SocialLink href="https://www.facebook.com/pg/maquinavisual">
