@@ -27,6 +27,11 @@ const fetchFailed = err => {
 };
 
 export const fetchData = dispatch => async dispatch => {
+  let language = navigator.language || navigator.userLanguage;
+  language = language.slice(0, 2);
+
+  if (language !== 'es') language = 'en';
+
   dispatch({
     type: FETCH_DATA
   });
@@ -48,9 +53,8 @@ export const fetchData = dispatch => async dispatch => {
   //   .catch(err => dispatch(fetchFailed(err)));
 };
 
-export const changeLang = value => {
+export const changeLang = () => {
   return {
-    type: CHANGE_LANG,
-    payload: value
+    type: CHANGE_LANG
   };
 };

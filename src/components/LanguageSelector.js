@@ -1,42 +1,41 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
+import { connect } from 'react-redux';
 
-const LanguageSelector = styled.div``;
+import { changeLang } from '../redux/actions';
 
 const H2 = styled.div`
-
-  text-align:center;
+  text-transform: uppercase;
+  cursor: pointer;
+  user-select: none;
+  text-align: center;
   color: #fff;
   border: 1px solid;
   padding: 5px;
   padding-top: 8px;
   margin-right: 50px;
   &:hover {
-    background-color; #fff;
+    background-color: #f1f1f2;
   }
-  &:is-hidden {
-    display:none;
+  &.is-hidden {
+    display: none;
   }
   &:both {
-    border-top:none;
+    border-top: none;
   }
 `;
-const checkCurrentLanguage = () => {
-  return "esp";
-};
-const chooseLanguage = () => {
-  return;
+
+// () => props.changeLang()
+const LanguageSelector = props => (
+  <H2 onClick={() => props.changeLang()}>
+    {props.language === 'en' ? 'es' : 'en'}
+  </H2>
+);
+
+const mapStateToProps = state => {
+  return {
+    language: state.data.language
+  };
 };
 
-export default props => {
-  let selectedLang = "esp";
-
-  return (
-    <LanguageSelector {...props}>
-      <H2 onClick={this.chooseLanguage}>ESP</H2>
-      <H2 onClick={this.chooseLanguage} className="is-hidden">
-        ENG
-      </H2>
-    </LanguageSelector>
-  );
-};
+export default connect(mapStateToProps, { changeLang })(LanguageSelector);

@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import { connect } from 'react-redux';
 
 import logo from '../img/logo_footer.svg';
-
+import translations from '../translations';
 
 const Logo = styled.img`
   width: 25%;
@@ -64,7 +65,7 @@ const H4 = styled.h4`
   font-size: 14px;
   font-style: italic;
   text-transform: uppercase;
-  letter-spacing:130%;
+  letter-spacing: 130%;
 `;
 
 const BackToTop = styled.div`
@@ -115,11 +116,10 @@ const smoothScroll = () => {
   }
 };
 
-const Footer = () => (
+const Footer = props => (
   <Wrap>
-       <Logo src={logo} />
-    <Content>   
-     
+    <Logo src={logo} />
+    <Content>
       <Social>
         <SocialLink href="https://www.facebook.com/pg/maquinavisual">
           <i className="fab fa-facebook-f fa-2x" />
@@ -137,10 +137,12 @@ const Footer = () => (
 
       <General>
         <H4>3D animation & post production</H4>
-        <div className='end-line-footer'>
-						<span className='line'></span>
-						<h6 data-translatable >© {(new Date().getFullYear())} MAQUINA VISUAL SOME RIGHTS RESERVED.</h6>
-				</div>
+        <div className="end-line-footer">
+          <span className="line" />
+          <h6 data-translatable>
+            © {new Date().getFullYear()} MAQUINA VISUAL SOME RIGHTS RESERVED.
+          </h6>
+        </div>
         <Links>
           <LinkTo href="tel:+56982000000">
             <i className="fas fa-mobile-alt fa-2x" /> +56 9 7623 4946
@@ -156,11 +158,17 @@ const Footer = () => (
           <span>
             <i className="fas fa-angle-up fa-4x" />
           </span>
-          Volver arriba
+          {translations.footer.top[props.language]}
         </ToTop>
       </BackToTop>
     </Content>
   </Wrap>
 );
 
-export default Footer;
+const mapStateToProps = state => {
+  return {
+    language: state.data.language
+  };
+};
+
+export default connect(mapStateToProps)(Footer);

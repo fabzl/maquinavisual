@@ -2,46 +2,38 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import Box from './Box';
 
-
-
-
 class Grid extends Component {
   state = {
     column: '1fr'
-  }
-
-
-
+  };
 
   setfullWidth = () => {
-    
-    
-    console.log("set full width");
     console.log(this.props);
-    
-    if(this.props.large) {
+
+    if (this.props.large) {
       return true;
-    }else{
+    } else {
       return false;
     }
-
-  }
-
+  };
 
   renderBoxes = () => {
-    return this.props.data.map((item, key) => {
+    const { language, data } = this.props;
+    return data.map((item, key) => {
+      console.log(item);
       // Si no existe acf implementado
       if (!item.acf.avatar_picture) return null;
       const {
         avatar_picture: { url },
         nombre_del_proyecto,
+        project_name,
         cliente
       } = item.acf;
       return (
         <Box
           key={item.id}
           image={url}
-          title={nombre_del_proyecto}
+          title={language === 'es' ? nombre_del_proyecto : project_name}
           client={cliente}
           videoUrl={item.acf.vimeourl}
           link={this.props.link ? item.slug : null}
@@ -52,7 +44,7 @@ class Grid extends Component {
 
   render() {
     const Wrap = styled.div`
-      display: grid;  
+      display: grid;
       grid-template-columns: ${this.setfullWidth() ? '1fr' : '1fr 2fr'};
       grid-auto-rows: 430px;
       & div:last-child:nth-child(odd) {
@@ -62,7 +54,7 @@ class Grid extends Component {
         grid-column: 3 / 3;
       }
     `;
-   
+
     return <Wrap>{this.renderBoxes()}</Wrap>;
   }
 }

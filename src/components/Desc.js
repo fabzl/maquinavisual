@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import translations from '../translations';
 
 const Section = styled.div`
   padding: 40px 0 20px;
@@ -49,7 +50,7 @@ const Desc = props => (
       <H2>{props.title}</H2>
       <Description>{props.desc}</Description>
       <Dl>
-        <Dt>Cliente</Dt>
+        <Dt>{translations.item.client[props.language]}</Dt>
         <Dd>{props.client}</Dd>
       </Dl>
     </Container>

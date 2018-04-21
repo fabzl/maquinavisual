@@ -8,7 +8,8 @@ import Desc from '../components/Desc';
 const ShowWork = props => {
   // Filtrar a solamente los que tienen avatar_picture
   // const items = props.data.filter(item => item.acf.avatar_picture);
-  const items = props.posts;
+  const { posts, language } = props;
+  const items = posts;
 
   // Chequear item
   const { link } = props.match.params;
@@ -18,7 +19,9 @@ const ShowWork = props => {
   const {
     avatar_picture: { url },
     nombre_del_proyecto,
+    project_name,
     descripcion_del_proyecto,
+    project_description,
     vimeourl,
     cliente
   } = items[key].acf;
@@ -32,7 +35,9 @@ const ShowWork = props => {
   return (
     <div>
       <MainImage
-        nombre_del_proyecto={nombre_del_proyecto}
+        nombre_del_proyecto={
+          language === 'es' ? nombre_del_proyecto : project_name
+        }
         url={url}
         videoUrl={vimeourl}
         prevLink={prevLink}
@@ -40,9 +45,12 @@ const ShowWork = props => {
       />
 
       <Desc
-        title={nombre_del_proyecto}
-        desc={descripcion_del_proyecto}
+        title={language === 'es' ? nombre_del_proyecto : project_name}
+        desc={
+          language === 'es' ? descripcion_del_proyecto : project_description
+        }
         client={cliente}
+        language={language}
       />
     </div>
   );
@@ -50,7 +58,8 @@ const ShowWork = props => {
 
 const mapStateToProps = state => {
   return {
-    posts: state.data.posts
+    posts: state.data.posts,
+    language: state.data.language
   };
 };
 

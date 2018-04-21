@@ -1,9 +1,11 @@
-import React from "react";
-import styled from "styled-components";
-import { Link, NavLink } from "react-router-dom";
-import LanguageSelector from "./LanguageSelector";
+import React from 'react';
+import styled from 'styled-components';
+import { connect } from 'react-redux';
+import { Link, NavLink } from 'react-router-dom';
+import LanguageSelector from './LanguageSelector';
 
-import logo from "../img/logo_main_white.svg";
+import translations from '../translations';
+import logo from '../img/logo_main_white.svg';
 
 const Nav = styled.nav`
   position: fixed;
@@ -66,7 +68,7 @@ const BurgerLink = styled.a`
   }
 `;
 
-export default () => (
+const Header = props => (
   <Nav>
     <LogoContainer>
       <Link to="/">
@@ -74,13 +76,13 @@ export default () => (
       </Link>
     </LogoContainer>
 
-    <LinkTo to="/reel">Reel</LinkTo>
+    <LinkTo to="/reel">{translations.header.reel[props.language]}</LinkTo>
 
-    <LinkTo to="/work">Work</LinkTo>
+    <LinkTo to="/work">{translations.header.work[props.language]}</LinkTo>
 
-    <LinkTo to="/about">About</LinkTo>
+    <LinkTo to="/about">{translations.header.about[props.language]}</LinkTo>
 
-    <LinkTo to="/contact">Contact</LinkTo>
+    <LinkTo to="/contact">{translations.header.contact[props.language]}</LinkTo>
     <LanguageSelector />
 
     <BurgerLink>
@@ -88,3 +90,11 @@ export default () => (
     </BurgerLink>
   </Nav>
 );
+
+const mapStateToProps = state => {
+  return {
+    language: state.data.language
+  };
+};
+
+export default connect(mapStateToProps)(Header);

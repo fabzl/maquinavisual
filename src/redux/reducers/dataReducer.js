@@ -9,7 +9,8 @@ const initialState = {
   loading: false,
   pages: [],
   posts: [],
-  error: ''
+  error: '',
+  language: 'es'
 };
 
 export default (state = initialState, action) => {
@@ -28,7 +29,7 @@ export default (state = initialState, action) => {
       return { ...state, loading: false, error: action.error };
     }
     case CHANGE_LANG: {
-      return { ...state, language: action.payload };
+      return { ...state, language: state.language === 'en' ? 'es' : 'en' };
     }
     default:
       return state;
