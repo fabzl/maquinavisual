@@ -42,7 +42,9 @@ const Text = styled.div`
   /* opacity: 0; */
   transition: opacity 1.3s;
   width: 93.3333%;
-  max-width: 1600px;
+  @media (max-width: 2000px) {
+    max-width: 1600px;
+  }
   text-align: center;
   margin: 0 auto;
 

@@ -45,7 +45,10 @@ const LogoContainer = styled.div`
 
 const Logo = styled.img`
   width: 80%;
-  min-width: 350px;
+
+  @media (min-width: 500px) {
+    min-width: 350px;
+  }
 `;
 
 const Burger = () => (

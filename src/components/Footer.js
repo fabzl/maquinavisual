@@ -1,13 +1,16 @@
-import React from 'react';
-import styled from 'styled-components';
-import { connect } from 'react-redux';
+import React from "react";
+import styled from "styled-components";
+import { connect } from "react-redux";
 
-import logo from '../img/logo_footer.svg';
-import translations from '../translations';
+import logo from "../img/logo_footer.svg";
+import translations from "../translations";
 
 const Logo = styled.img`
   width: 25%;
-  min-width: 350px;
+
+  @media (min-width: 500px) {
+    min-width: 350px;
+  }
   margin: 0 auto;
   display: flex;
 `;
