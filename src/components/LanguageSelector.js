@@ -3,19 +3,24 @@ import styled from "styled-components";
 import { connect } from "react-redux";
 
 import { changeLang } from "../redux/actions";
+import { colors } from "../styles/globals";
 
 const H2 = styled.div`
   text-transform: uppercase;
   cursor: pointer;
   user-select: none;
   text-align: center;
-  color: #f1f1f2;
-  border: 1px solid;
+  color: ${colors.white};
+  border: 1px solid ${colors.white};
   padding: 5px;
+  min-width: 32px;
   padding-top: 8px;
   margin-right: 50px;
+  transition: 0.7s all;
   &:hover {
-    background-color: #f1f1f2;
+    background-color: ${colors.white};
+    color: ${colors.black};
+    border: none;
   }
   &:both {
     border-top: none;

@@ -5,6 +5,9 @@ import { connect } from "react-redux";
 import laurel from "../img/laurels_black.svg";
 import translations from "../translations";
 
+import { colors } from "../styles/globals";
+import Footer from "../components/Footer";
+
 const Wrap = styled.div`
   height: 50vh;
   background: url(${props => props.src}) no-repeat center;
@@ -16,7 +19,7 @@ const Acerca = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #f1f1f2;
+  color: ${colors.white};
   text-align: center;
   max-width: 600px;
   margin: 0 auto;
@@ -72,8 +75,8 @@ const Image = styled.div`
 
 const Prizes = styled.div`
   margin: 0 auto;
-  ådisplay: flex;
-  color: #f1f1f2;
+  display: flex;
+  color: ${colors.white};
   flex: 1;
 `;
 
@@ -86,10 +89,11 @@ const Box = styled.div`
   align-items: center;
 
   background: linear-gradient(
-    135deg,
+    45deg,
     rgba(205, 73, 82, 1) 0%,
     rgba(215, 56, 117, 1) 100%
   );
+  padding-bottom: 100px;
 `;
 
 const Item = ({ item }) => <Laurel>{item}</Laurel>;
@@ -138,6 +142,7 @@ const About = props => {
           </div>
         </Box>
       </Prizes>
+      <Footer />
     </div>
   );
 };

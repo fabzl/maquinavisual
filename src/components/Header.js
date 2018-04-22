@@ -1,11 +1,13 @@
-import React from 'react';
-import styled from 'styled-components';
-import { connect } from 'react-redux';
-import { Link, NavLink } from 'react-router-dom';
-import LanguageSelector from './LanguageSelector';
+import React from "react";
+import styled from "styled-components";
+import { connect } from "react-redux";
+import { Link, NavLink } from "react-router-dom";
+import LanguageSelector from "./LanguageSelector";
 
-import translations from '../translations';
-import logo from '../img/logo_main_white.svg';
+import translations from "../translations";
+import logo from "../img/logo_main_white.svg";
+
+import { colors } from "../styles/globals";
 
 const Nav = styled.nav`
   position: fixed;
@@ -25,17 +27,20 @@ const Nav = styled.nav`
 
 const LinkTo = styled(NavLink)`
   text-indent: 0;
-  color: #f1f1f2;
+  color: ${colors.white};
   text-decoration: none;
   display: inline-block;
-  font-size: 1.2em;
+  font-size: 1.1em;
   margin: 0 20px;
+  align-items: center;
   line-height: 1em;
   text-transform: uppercase;
   transition: 1s all;
+  background: transparent;
+  font-weight: 750;
   &.active,
   &:hover {
-    color:	: #cd4952;
+    color: ${colors.white};
   }
 `;
 
@@ -52,7 +57,7 @@ const Logo = styled.img`
 `;
 
 const Burger = () => (
-  <svg width="30px" height="30px" fill="#f1f1f2">
+  <svg width="30px" height="30px" fill="#{color.white}">
     <rect y="7" width="30" height="2" />
     <rect y="15" width="30" height="2" />
     <rect y="23" width="30" height="2" />
@@ -61,7 +66,7 @@ const Burger = () => (
 
 const BurgerLink = styled.a`
   z-index: 50000;
-  color: #f1f1f2;
+  color: ${colors.white};
   margin: 0 20px;
 
   @media (min-width: 740px) {
@@ -127,7 +132,7 @@ class Header extends React.Component {
             <Logo src={logo} />
           </Link>
         </LogoContainer>
-        <NavContainer className={this.state.openMenu && 'active'}>
+        <NavContainer className={this.state.openMenu && "active"}>
           <LinkTo to="/reel">{translations.header.reel[language]}</LinkTo>
 
           <LinkTo to="/work">{translations.header.work[language]}</LinkTo>
@@ -139,7 +144,7 @@ class Header extends React.Component {
         </NavContainer>
         <BurgerLink
           onClick={this.openMenu}
-          className={this.state.openMenu && 'open'}
+          className={this.state.openMenu && "open"}
         >
           <Burger />
         </BurgerLink>
