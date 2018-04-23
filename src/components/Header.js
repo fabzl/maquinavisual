@@ -16,8 +16,7 @@ const Nav = styled.nav`
   z-index: 900;
   flex-direction: row;
   display: flex;
-  /* font-size: 16px; */
-  /* justify-content: space-around; */
+
   background: linear-gradient(
     to bottom,
     rgba(0, 0, 120, 0.3) 0%,
@@ -38,6 +37,11 @@ const LinkTo = styled(NavLink)`
   transition: 1s all;
   background: transparent;
   font-weight: 750;
+
+  @media (max-width: 740px) {
+    font-size: 2.7em;
+    line-height: 0.8em;
+  }
   &.active,
   &:hover {
     color: ${colors.white};
@@ -57,7 +61,7 @@ const Logo = styled.img`
 `;
 
 const Burger = () => (
-  <svg width="30px" height="30px" fill="#{color.white}">
+  <svg width="30px" height="30px" fill={colors.white}>
     <rect y="7" width="30" height="2" />
     <rect y="15" width="30" height="2" />
     <rect y="23" width="30" height="2" />

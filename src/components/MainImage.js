@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
 import { playVideo } from "../redux/actions";
+import { colors } from "../styles/globals";
 
 const Wrap = styled.div`
   display: flex;
@@ -12,7 +13,7 @@ const Wrap = styled.div`
   align-items: center;
   background: url(${props => props.src}) no-repeat center;
   background-size: cover;
-  color: #f1f1f2;
+  color: ${colors.white};
   font-size: 16px;
   & a:first-child:hover {
     background: linear-gradient(
@@ -41,7 +42,7 @@ const Wrap = styled.div`
 
 const H1 = styled.h1`
   /* margin-bottom: 0; */
-  font-size: 23px;
+  font-size: 62px;
   line-height: 1em;
   text-transform: uppercase;
   font-weight: 700;
@@ -51,7 +52,7 @@ const H1 = styled.h1`
 `;
 
 const Arrow = styled(Link)`
-  color: #f1f1f2;
+  color: ${colors.white};
   height: 100%;
   align-items: center;
   display: flex;

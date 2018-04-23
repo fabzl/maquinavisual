@@ -6,11 +6,11 @@ import { keyframes } from "styled-components";
 import { bounce } from "react-animations";
 
 import { colors } from "../styles/globals";
-import { merge, zoomIn, fadeIn } from "react-animations";
+import { growOld } from "../styles/globals";
 
-const bounceAnimation = keyframes`${bounce}`;
+// const bounceAnimation = keyframes`${bounce}`;
 
-const Zoom = merge(zoomIn, fadeIn);
+// const Zoom = merge(zoomIn, fadeIn);
 
 const Loader = styled.div`
   position: fixed;
@@ -24,9 +24,11 @@ const Loader = styled.div`
   height: 100vh;
   background: $mwhite;
   align-items: center;
-  /* &.animation {
-		animation: fadeOutCurtain 1.2s ease-out;
-	} */
+  animation: ${growOld};
+  animation-duration: 3000ms;
+  /* transform-origin: 70% 70%; */
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 
   img {
     width: 100%;
@@ -34,7 +36,7 @@ const Loader = styled.div`
     cursor: pointer;
     grid-column: 2 / 2;
     grid-row: 2 / 2;
-    animation: 1s ${Zoom};
+
     flex-grow: 2;
     display: flex;
     align-self: center;

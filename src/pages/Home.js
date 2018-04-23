@@ -1,11 +1,12 @@
-import React from 'react';
-import styled from 'styled-components';
-import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import React from "react";
+import styled from "styled-components";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
-import VideoHome from '../components/VideoHome';
-import Grid from '../components/Grid';
-import translations from '../translations';
+import VideoHome from "../components/VideoHome";
+import Grid from "../components/Grid";
+import translations from "../translations";
+import Footer from "../components/Footer";
 
 const AllWork = styled.div`
   padding: 0;
@@ -46,6 +47,7 @@ const Home = props => (
         <LinkTo to="/work">{translations.home.link[props.language]}</LinkTo>
       </H3>
     </AllWork>
+    <Footer />
   </div>
 );
 

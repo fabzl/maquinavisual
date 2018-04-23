@@ -4,11 +4,13 @@ import { connect } from "react-redux";
 
 import logo from "../img/logo_footer.svg";
 import translations from "../translations";
+import { colors } from "../styles/globals";
 
 const Logo = styled.img`
-  width: 25%;
+  width: 100%;
   @media (min-width: 500px) {
     min-width: 350px;
+    width: 50%;
   }
   margin: 0 auto;
   display: flex;
@@ -21,15 +23,6 @@ const Wrap = styled.footer`
   display: block;
 `;
 
-// const H2 = styled.h2`
-//   text-indent: -9999px;
-//   color: transparent;
-//   font-size: 0;
-//   overflow: hidden;
-//   margin: 30px 0;
-//   line-height: 0;
-// `;
-
 const Content = styled.div`
   display: flex;
   flex: 1;
@@ -40,17 +33,24 @@ const Social = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: 740px) {
+    display: none;
+  }
 `;
 
 const SocialLink = styled.a`
   text-decoration: none;
-  color: #f1f1f2;
+  color: ${colors.white};
+  transition: 1s all;
+  &:hover {
+    color: ${colors.violet};
+  }
 `;
 
 const General = styled.div`
   flex: 3;
   text-align: center;
-  color: #f1f1f2;
+  color: ${colors.white};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -68,31 +68,49 @@ const H4 = styled.h4`
   font-style: italic;
   text-transform: uppercase;
   letter-spacing: 130%;
+  white-space: nowrap;
 `;
 
 const BackToTop = styled.div`
   flex: 1;
   text-align: right;
+
+  @media (max-width: 740px) {
+    display: none;
+  }
 `;
 
 const Links = styled.div`
   margin-top: 10px;
+  @media (max-width: 740px) {
+    flex-direction: column;
+    text-align: left;
+  }
 `;
 
 const LinkTo = styled.a`
-  /* padding: 5px 0 10px;
-  margin: 5px 0; */
   font-weight: 500;
-  color: #f1f1f2;
+  color: ${colors.white};
   text-decoration: none;
   font-size: 16px;
   padding-left: 10px;
   padding-right: 10px;
   font-size: 16px;
+  white-space: nowrap;
+  transition: 1s all;
+  &:hover {
+    color: ${colors.violet};
+  }
+
+  @media (max-width: 740px) {
+    width: 100%;
+    display: block;
+    margin-bottom: 14px;
+  }
 `;
 
 const ToTop = styled.a`
-  color: #f1f1f2;
+  color: ${colors.white};
   font-size: 14px;
   display: inline-block;
   overflow: hidden;
@@ -100,11 +118,14 @@ const ToTop = styled.a`
   cursor: pointer;
   margin: 20px 0;
   text-decoration: none;
+
   > span {
     display: block;
   }
+
+  transition: 1s all;
   &:hover {
-    color: #e70895;
+    color: ${colors.violet};
   }
 `;
 

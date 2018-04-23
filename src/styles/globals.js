@@ -59,21 +59,21 @@ export const FadeOut = styled.div`
 
 export const pulse = keyframes`
   0% { transform: scale(1); }
-  30% { transform: scale(1); }
-  40% { transform: scale(1.08); }
-  50% { transform: scale(1); }
-  60% { transform: scale(1); }
-  70% { transform: scale(1.05); }
-  80% { transform: scale(1); }
+  25% { transform: scale(1.2); }
+  75% { transform: scale(0.8); }
   100% { transform: scale(1); }
 `;
 
-// Here we create a component that will rotate everything we pass in over two seconds
-export const Pulse = styled.div`
-  /* display: inline-block; */
-  animation: ${pulse} 0.8s;
-  animation-duration: 5000ms;
-  transform-origin: 70% 70%;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+export const growOld = keyframes`
+  0% {    
+          transform: scale(0.5);
+          opacity: 0;
+   }
+  20% {
+    opacity: 1;
+  }
+  100% { 
+          transform: scale(1.4);
+          opacity: 1;
+     }
 `;
