@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
-import { connect } from 'react-redux';
-import { playVideo } from '../redux/actions';
-import { Link } from 'react-router-dom';
+import React, { Component } from "react";
+import styled from "styled-components";
+import { connect } from "react-redux";
+import { playVideo } from "../redux/actions";
+import { Link } from "react-router-dom";
+import { colors } from "../styles/globals";
 
 const Wrap = styled.div`
   position: relative;
@@ -37,7 +38,7 @@ const Content = styled.div`
   text-align: center;
   user-select: none;
   opacity: 0;
-  color: #fff;
+  color: ${colors.white};
 
   h4 {
     margin: 0 0 10px;
@@ -54,7 +55,7 @@ const Content = styled.div`
     font-weight: 700;
     font-style: italic;
     text-transform: uppercase;
-    color: #cd4952;
+    color: ${colors.red};
     padding: 0.33em 10px 5px;
     margin: 0;
     line-height: 1em;
@@ -78,7 +79,7 @@ const Middle = styled.div`
 `;
 
 const LinkTo = styled(Link)`
-  color: #f1f1f2;
+  color: ${colors.white};
   text-decoration: none;
   display: block;
   height: 100%;
@@ -96,7 +97,7 @@ class Box extends Component {
     return (
       <Wrap src={this.props.image}>
         <LinkTo
-          to={this.props.link ? `/work/${this.props.link}` : '/'}
+          to={this.props.link ? `/work/${this.props.link}` : "/"}
           onClick={this.handleLink}
         >
           <Content>
@@ -112,12 +113,3 @@ class Box extends Component {
 }
 
 export default connect(null, { playVideo })(Box);
-
-
-// // maquina visual schema 
-
-// $mblack							: #1e1814;
-// $mgray 							: #282828;
-// $mwhite 						: #f1f1f2;
-// $red-gradient1 					: #d73875;
-// $red-gradient2 					: #cd4952;

@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 
 import laurel from "../img/laurels_black.svg";
 import translations from "../translations";
+import logo from "../img/logo_loader.svg";
 
 import { colors } from "../styles/globals";
 import Footer from "../components/Footer";
@@ -23,6 +24,7 @@ const Acerca = styled.div`
   text-align: center;
   max-width: 600px;
   margin: 0 auto;
+  background: ${logo};
 `;
 
 const H2 = styled.h2`
