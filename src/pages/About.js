@@ -135,7 +135,7 @@ const About = props => {
               {translations.about.prizes[props.language]}
             </H2>
             {premiosArray[props.language].map(item => (
-              <div>
+              <div key={item}>
                 <Item item={item} />
               </div>
             ))}
