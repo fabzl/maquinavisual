@@ -8,26 +8,24 @@ class Social extends Component {
     display: "none"
   };
 
-  displayOrNot = () => {
+  isInTheHeader = () => {
     if (this.props.header) {
-      console.log("headerr true");
       return true;
     } else {
       return false;
-      console.log("headerr false");
     }
   };
 
   render() {
     const Social = styled.div`
       flex: 1;
-
       justify-content: space-between;
       align-items: center;
-      display: ${this.displayOrNot() ? "none" : "flex"};
+      display: ${this.isInTheHeader() ? "none" : "flex"};
 
       @media (max-width: 740px) {
-        display: ${this.displayOrNot() ? "flex" : "none"};
+        display: ${this.isInTheHeader() ? "flex" : "none"};
+        width: 40%;
       }
     `;
 
@@ -35,6 +33,7 @@ class Social extends Component {
       text-decoration: none;
       color: ${colors.white};
       transition: 1s all;
+
       &:hover {
         color: ${colors.violet};
       }
@@ -42,16 +41,22 @@ class Social extends Component {
 
     return (
       <Social>
-        <SocialLink href="https://www.facebook.com/pg/maquinavisual">
+        <SocialLink
+          target="_blank"
+          href="https://www.facebook.com/pg/maquinavisual"
+        >
           <i className="fab fa-facebook-f fa-2x" />
         </SocialLink>
-        <SocialLink href="http://www.instagram.com/maquinavisual">
+        <SocialLink
+          target="_blank"
+          href="http://www.instagram.com/maquinavisual"
+        >
           <i className="fab fa-instagram fa-2x" />
         </SocialLink>
-        <SocialLink href="http://www.linkeid.com/maquinavisual">
+        <SocialLink target="_blank" href="http://www.linkeid.com/maquinavisual">
           <i className="fab fa-linkedin-in fa-2x" />
         </SocialLink>
-        <SocialLink href="https://vimeo.com/maquinavisual">
+        <SocialLink target="_blank" href="https://vimeo.com/maquinavisual">
           <i className="fab fa-vimeo-v fa-2x" />
         </SocialLink>
       </Social>

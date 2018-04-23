@@ -39,10 +39,17 @@ const LinkTo = styled(NavLink)`
   transition: 1s all;
   background: transparent;
   font-weight: 750;
+  &:first-child {
+    display: none;
+  }
 
   @media (max-width: 740px) {
-    font-size: 2.7em;
-    line-height: 0.8em;
+    font-size: 2.4em;
+    margin: auto;
+    margin-top: 10vh;
+    &:first-child {
+      display: flex;
+    }
   }
   &.active,
   &:hover {
@@ -57,8 +64,8 @@ const LogoContainer = styled.div`
 const Logo = styled.img`
   width: 80%;
 
-  @media (min-width: 500px) {
-    min-width: 350px;
+  @media (min-width: 740px) {
+    min-width: 30px;
   }
 `;
 
@@ -77,7 +84,7 @@ const ToTop = styled.a`
   overflow: hidden;
   text-align: center;
   cursor: pointer;
-  margin: 20px 0;
+
   text-decoration: none;
 
   > span {
@@ -103,9 +110,16 @@ const smoothScroll = () => {
 const BackToTop = styled.div`
   flex: 1;
   text-align: right;
+  display: none;
 
   @media (max-width: 740px) {
     display: none;
+    &.active {
+      display: flex;
+      bottom: 10px;
+      right: 10px;
+      position: fixed;
+    }
   }
 `;
 
@@ -135,7 +149,6 @@ const BurgerLink = styled.a`
 `;
 
 const NavContainer = styled.div`
-  width: 100%;
   align-items: center;
   justify-content: flex-end;
   z-index: 900;
@@ -178,6 +191,8 @@ class Header extends React.Component {
           </Link>
         </LogoContainer>
         <NavContainer className={this.state.openMenu && "active"}>
+          <LinkTo to="/">{translations.header.home[language]}</LinkTo>
+
           <LinkTo to="/reel">{translations.header.reel[language]}</LinkTo>
 
           <LinkTo to="/work">{translations.header.work[language]}</LinkTo>
@@ -185,9 +200,10 @@ class Header extends React.Component {
           <LinkTo to="/about">{translations.header.about[language]}</LinkTo>
 
           <LinkTo to="/contact">{translations.header.contact[language]}</LinkTo>
+
           <Social header />
 
-          <BackToTop>
+          <BackToTop className={this.state.openMenu && "active"}>
             <ToTop onClick={() => smoothScroll()}>
               <span>
                 <i className="fas fa-angle-up fa-4x" />

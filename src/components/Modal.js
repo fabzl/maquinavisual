@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
-import { connect } from 'react-redux';
-import ReactPlayer from 'react-player';
+import React, { Component } from "react";
+import styled from "styled-components";
+import { connect } from "react-redux";
+import ReactPlayer from "react-player";
 
-import { enableScroll, disableScroll } from '../helpers';
-import { stopVideo } from '../redux/actions';
+import { enableScroll, disableScroll } from "../helpers";
+import { stopVideo } from "../redux/actions";
 
 const Overlay = styled.div`
   position: fixed; /* Sit on top of the page content */
@@ -39,8 +39,8 @@ const Content = styled.div`
 
 const CloseButton = styled.div`
   position: absolute;
-  right: 10px;
-  top: 10px;
+  right: 20px;
+  top: 20px;
   color: #ddd;
   &:hover {
     opacity: 0.5;

@@ -1,13 +1,12 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
-import { connect } from 'react-redux';
-import ReactPlayer from 'react-player';
+import React, { Component } from "react";
+import styled from "styled-components";
+import { connect } from "react-redux";
+import ReactPlayer from "react-player";
 
-import { enableScroll, disableScroll } from '../helpers';
-import { stopVideo } from '../redux/actions';
-
-import { Link, NavLink } from 'react-router-dom';
-
+import { enableScroll, disableScroll } from "../helpers";
+import { stopVideo } from "../redux/actions";
+import { colors } from "../styles/globals";
+import { Link, NavLink } from "react-router-dom";
 
 const Overlay = styled.div`
   position: fixed; /* Sit on top of the page content */
@@ -17,7 +16,6 @@ const Overlay = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  /* background-color: #000; */
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 9999; /* Specify a stack order in case you're using a different order for other elements */
   cursor: pointer; /* Add a pointer on hover */
@@ -42,8 +40,8 @@ const Content = styled.div`
 
 const CloseButton = styled.div`
   position: absolute;
-  right: 10px;
-  top: 10px;
+  right: 20px;
+  top: 20px;
   color: #ddd;
   &:hover {
     opacity: 0.5;
@@ -59,23 +57,18 @@ class Reel extends Component {
     // enableScroll();
     // window.scrollTo(0, this.props.scrollY);
   }
-  goBackHome() {
-      console.log("got to click");
-  }
 
   render() {
     // <ReactPlayer url="https://vimeo.com/247535876" playing={true} />
     return (
       <Overlay {...this.props}>
         <Content>
-          
-        <Link to="/">
- 
-          <CloseButton>
-            <i className="fas fa-times fa-3x" />
-          </CloseButton>
-          </Link> 
- 
+          <Link to="/">
+            <CloseButton>
+              <i className="fas fa-times fa-3x" />
+            </CloseButton>
+          </Link>
+
           <ReactPlayer
             url="https://vimeo.com/247535876"
             playing={true}
