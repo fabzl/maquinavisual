@@ -9,6 +9,8 @@ import logo from "../img/logo_main_white.svg";
 
 import { colors } from "../styles/globals";
 
+import Social from "./Social";
+
 const Nav = styled.nav`
   position: fixed;
   width: 100%;
@@ -144,6 +146,7 @@ class Header extends React.Component {
           <LinkTo to="/about">{translations.header.about[language]}</LinkTo>
 
           <LinkTo to="/contact">{translations.header.contact[language]}</LinkTo>
+          <Social header />
           <LanguageSelector />
         </NavContainer>
         <BurgerLink

@@ -7,6 +7,7 @@ import VideoHome from "../components/VideoHome";
 import Grid from "../components/Grid";
 import translations from "../translations";
 import Footer from "../components/Footer";
+import { colors } from "../styles/globals";
 
 const AllWork = styled.div`
   padding: 0;
@@ -28,13 +29,13 @@ const H3 = styled.h3`
 `;
 
 const LinkTo = styled(Link)`
-  color: #f1f1f2;
+  color: ${colors.white};
   text-decoration: none;
   display: block;
   padding: 55px 0 45px;
   transition: all 1s;
   &:hover {
-    color: #1e1814;
+    color: ${colors.black};
   }
 `;
 

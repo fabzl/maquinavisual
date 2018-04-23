@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import logo from "../img/logo_footer.svg";
 import translations from "../translations";
 import { colors } from "../styles/globals";
+import Social from "./Social";
 
 const Logo = styled.img`
   width: 100%;
@@ -21,30 +22,16 @@ const Wrap = styled.footer`
   padding: 3.5rem 4rem 2rem;
   min-height: 150px;
   display: block;
+  padding-bottom: 20px;
+
+  @media (max-width: 740px) {
+    padding-bottom: 40px;
+  }
 `;
 
 const Content = styled.div`
   display: flex;
   flex: 1;
-`;
-
-const Social = styled.div`
-  flex: 1;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  @media (max-width: 740px) {
-    display: none;
-  }
-`;
-
-const SocialLink = styled.a`
-  text-decoration: none;
-  color: ${colors.white};
-  transition: 1s all;
-  &:hover {
-    color: ${colors.violet};
-  }
 `;
 
 const General = styled.div`
@@ -85,6 +72,12 @@ const Links = styled.div`
   @media (max-width: 740px) {
     flex-direction: column;
     text-align: left;
+  }
+`;
+
+const H6 = styled.h6`
+  @media (max-width: 740px) {
+    font-size: 12px;
   }
 `;
 
@@ -143,28 +136,14 @@ const Footer = props => (
   <Wrap>
     <Logo src={logo} />
     <Content>
-      <Social>
-        <SocialLink href="https://www.facebook.com/pg/maquinavisual">
-          <i className="fab fa-facebook-f fa-2x" />
-        </SocialLink>
-        <SocialLink href="http://www.instagram.com/maquinavisual">
-          <i className="fab fa-instagram fa-2x" />
-        </SocialLink>
-        <SocialLink href="http://www.linkeid.com/maquinavisual">
-          <i className="fab fa-linkedin-in fa-2x" />
-        </SocialLink>
-        <SocialLink href="https://vimeo.com/maquinavisual">
-          <i className="fab fa-vimeo-v fa-2x" />
-        </SocialLink>
-      </Social>
-
+      <Social header="false" />
       <General>
         <H4>3D animation & post production</H4>
         <div className="end-line-footer">
           <span className="line" />
-          <h6 data-translatable>
+          <H6 data-translatable>
             © {new Date().getFullYear()} MAQUINA VISUAL SOME RIGHTS RESERVED.
-          </h6>
+          </H6>
         </div>
         <Links>
           <LinkTo href="tel:+56982000000">
@@ -175,7 +154,6 @@ const Footer = props => (
           </LinkTo>
         </Links>
       </General>
-
       <BackToTop>
         <ToTop onClick={() => smoothScroll()}>
           <span>
