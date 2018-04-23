@@ -70,6 +70,45 @@ const Burger = () => (
   </svg>
 );
 
+const ToTop = styled.a`
+  color: ${colors.white};
+  font-size: 14px;
+  display: inline-block;
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
+  margin: 20px 0;
+  text-decoration: none;
+
+  > span {
+    display: block;
+  }
+
+  transition: 1s all;
+  &:hover {
+    color: ${colors.violet};
+  }
+`;
+
+const smoothScroll = () => {
+  const scrollY = window.scrollY;
+  if (scrollY > 0) {
+    setTimeout(() => {
+      window.scrollTo(0, scrollY - 30 >= 0 ? window.scrollY - 30 : 0);
+      smoothScroll();
+    }, 10);
+  }
+};
+
+const BackToTop = styled.div`
+  flex: 1;
+  text-align: right;
+
+  @media (max-width: 740px) {
+    display: none;
+  }
+`;
+
 const BurgerLink = styled.a`
   z-index: 50000;
   color: ${colors.white};
@@ -147,6 +186,16 @@ class Header extends React.Component {
 
           <LinkTo to="/contact">{translations.header.contact[language]}</LinkTo>
           <Social header />
+
+          <BackToTop>
+            <ToTop onClick={() => smoothScroll()}>
+              <span>
+                <i className="fas fa-angle-up fa-4x" />
+              </span>
+              {translations.footer.top[this.props.language]}
+            </ToTop>
+          </BackToTop>
+
           <LanguageSelector />
         </NavContainer>
         <BurgerLink

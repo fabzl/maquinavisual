@@ -17,6 +17,11 @@ const H2 = styled.div`
   padding-top: 8px;
   margin-right: 50px;
   transition: 0.7s all;
+  @media (max-width: 740px) {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+  }
   &:hover {
     background-color: ${colors.white};
     color: ${colors.black};
