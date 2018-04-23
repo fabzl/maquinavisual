@@ -136,7 +136,7 @@ const Footer = props => (
   <Wrap>
     <Logo src={logo} />
     <Content>
-      <Social header="false" />
+      <Social />
       <General>
         <H4>3D animation & post production</H4>
         <div className="end-line-footer">

@@ -8,10 +8,6 @@ import { bounce } from "react-animations";
 import { colors } from "../styles/globals";
 import { growOld } from "../styles/globals";
 
-// const bounceAnimation = keyframes`${bounce}`;
-
-// const Zoom = merge(zoomIn, fadeIn);
-
 const Loader = styled.div`
   position: fixed;
   top: 0;
@@ -26,7 +22,7 @@ const Loader = styled.div`
   align-items: center;
   animation: ${growOld};
   animation-duration: 3000ms;
-  /* transform-origin: 70% 70%; */
+
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 

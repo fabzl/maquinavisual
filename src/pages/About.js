@@ -37,7 +37,7 @@ const H2 = styled.h2`
   text-align: center;
 
   &.dark {
-    color: #1e1814;
+    color: ${colors.black};
   }
 `;
 
@@ -47,7 +47,7 @@ const Laurel = styled.div`
   text-transform: uppercase;
   line-height: 1em;
   margin: 0;
-  color: #1e1814;
+  color: ${colors.black};
   max-width: 180px;
   min-height: 100px;
   text-align: center;

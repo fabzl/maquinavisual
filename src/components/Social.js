@@ -7,11 +7,14 @@ class Social extends Component {
   state = {
     display: "none"
   };
+
   displayOrNot = () => {
     if (this.props.header) {
+      console.log("headerr true");
       return true;
     } else {
       return false;
+      console.log("headerr false");
     }
   };
 
@@ -22,8 +25,9 @@ class Social extends Component {
       justify-content: space-between;
       align-items: center;
       display: ${this.displayOrNot() ? "none" : "flex"};
+
       @media (max-width: 740px) {
-        display: ${this.displayOrNot() ? "none" : "flex"};
+        display: ${this.displayOrNot() ? "flex" : "none"};
       }
     `;
 
