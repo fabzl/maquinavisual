@@ -48,7 +48,6 @@ const Home = props => (
         <LinkTo to="/work">{translations.home.link[props.language]}</LinkTo>
       </H3>
     </AllWork>
-    <Footer />
   </div>
 );
 

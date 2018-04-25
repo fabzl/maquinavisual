@@ -6,6 +6,5 @@ import Footer from "../components/Footer";
 export default () => (
   <div>
     <VideoHome contact fontColor title="Hagamos cosas increíbles" />
-    <Footer />
   </div>
 );

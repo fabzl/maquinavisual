@@ -5,8 +5,8 @@ export const colors = {
   black: "#1e1814",
   gray: "#282828",
   white: "#f1f1f2",
-  orange: "#d73875",
-  violet: "#cd4952"
+  violet: "#d73875",
+  orange: "#cd4952"
 };
 
 // keyframes returns a unique name based on a hash of the contents of the keyframes
@@ -41,7 +41,16 @@ export const fadeOut = keyframes`
     opacity: 1;
   }
   to {
-    opacity: 0;
+    opacity: 0.3;
+  }
+`;
+
+export const hide = keyframes`
+  from {
+    display:flex;
+  }
+  to {
+    opacity: 0.3;
   }
 `;
 

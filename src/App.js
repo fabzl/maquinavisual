@@ -1,34 +1,37 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { connect } from 'react-redux';
+import React, { Component } from "react";
+import styled from "styled-components";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { connect } from "react-redux";
 
 // Sections
-import Home from './pages/Home';
-import Work from './pages/Work';
-import ShowWork from './pages/ShowWork';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import Reel from './pages/Reel';
+import Home from "./pages/Home";
+import Work from "./pages/Work";
+import ShowWork from "./pages/ShowWork";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Reel from "./pages/Reel";
 
 // Components
-import Header from './components/Header';
-import Loader from './components/Loader';
+import Header from "./components/Header";
+import Loader from "./components/Loader";
 // import VideoPlayer from './components/VideoPlayer';
-import Modal from './components/Modal';
-import Fade from './components/Fade';
-import Footer from './components/Footer';
+import Modal from "./components/Modal";
+import Fade from "./components/Fade";
+import Footer from "./components/Footer";
 
-import { fetchData } from './redux/actions';
+import { colors } from "./styles/globals";
+import { fetchData } from "./redux/actions";
 
-// wrapper styles
+import Transition from "react-transition-group/Transition";
+
 const Wrap = styled.div`
   display: flex;
   min-height: 100vh;
   flex-direction: column;
   height: 100%;
-  background: #1e1814;;
-  /* overflow: ${props => (props.showVideo ? 'hidden' : 'visible')}; */
+  top:0;
+  background: ${colors.black};
+  /* overflow: ${props => (props.showVideo ? "hidden" : "visible")}; */
 `;
 
 class App extends Component {
@@ -46,12 +49,15 @@ class App extends Component {
 
     return (
       <Wrap {...this.props}>
+        <Transition  >
+          <Loader loaded />
+        </Transition>
         <Fade in={this.props.showVideo}>
           <Modal />
         </Fade>
 
         <Router>
-          <div style={{ display: 'flex', flex: 1 }}>
+          <div style={{ display: "flex", flex: 1 }}>
             <Header />
 
             <div style={{ flex: 1 }}>
@@ -67,7 +73,7 @@ class App extends Component {
             {/* <VideoPlayer /> */}
           </div>
         </Router>
-        {/* <Footer /> */}
+        <Footer />
       </Wrap>
     );
   }

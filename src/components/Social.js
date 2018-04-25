@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import Box from "./Box";
 import { colors } from "../styles/globals";
 
 class Social extends Component {
@@ -47,15 +46,18 @@ class Social extends Component {
         >
           <i className="fab fa-facebook-f fa-2x" />
         </SocialLink>
+
         <SocialLink
           target="_blank"
           href="http://www.instagram.com/maquinavisual"
         >
           <i className="fab fa-instagram fa-2x" />
         </SocialLink>
+
         <SocialLink target="_blank" href="http://www.linkeid.com/maquinavisual">
           <i className="fab fa-linkedin-in fa-2x" />
         </SocialLink>
+
         <SocialLink target="_blank" href="https://vimeo.com/maquinavisual">
           <i className="fab fa-vimeo-v fa-2x" />
         </SocialLink>

@@ -6,7 +6,7 @@ import ReactPlayer from "react-player";
 import { enableScroll, disableScroll } from "../helpers";
 import { stopVideo } from "../redux/actions";
 import { colors } from "../styles/globals";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Overlay = styled.div`
   position: fixed; /* Sit on top of the page content */
@@ -24,13 +24,6 @@ const Overlay = styled.div`
 `;
 
 const Content = styled.div`
-  /* position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border: 1px solid white;
-  width: 100%;
-  height: 100%; */
   display: flex;
   height: 100%;
   justify-content: center;
@@ -42,7 +35,7 @@ const CloseButton = styled.div`
   position: absolute;
   right: 20px;
   top: 20px;
-  color: #ddd;
+  color: ${colors.white};
   &:hover {
     opacity: 0.5;
   }
