@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import VideoHome from "../components/VideoHome";
 import Grid from "../components/Grid";
 import translations from "../translations";
-import Footer from "../components/Footer";
 import { colors } from "../styles/globals";
 
 const AllWork = styled.div`

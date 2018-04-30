@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { connect } from "react-redux";
 import ReactPlayer from "react-player";
 
-import { enableScroll, disableScroll } from "../helpers";
+// import { enableScroll, disableScroll } from "../helpers";
 import { stopVideo } from "../redux/actions";
 
 const Overlay = styled.div`

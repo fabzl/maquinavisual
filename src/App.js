@@ -21,8 +21,7 @@ import Footer from "./components/Footer";
 
 import { colors } from "./styles/globals";
 import { fetchData } from "./redux/actions";
-
-import Transition from "react-transition-group/Transition";
+import { loaderLoading, contentLoaded, loaderVisible } from "./redux/actions";
 
 const Wrap = styled.div`
   display: flex;
@@ -37,6 +36,7 @@ const Wrap = styled.div`
 class App extends Component {
   componentDidMount() {
     this.props.fetchData();
+    loaderLoading();
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -44,18 +44,28 @@ class App extends Component {
     // window.scrollTo(0, prevProps.scrollY);
   }
 
+  setToDestroy = props => {
+    console.log("set to destroy");
+    contentLoaded();
+
+    setTimeout(function() {
+      loaderVisible();
+      // console.log(this.props.loaderVisible);
+      this.setState({ loaderVisible: false });
+      console.log("After timeout", this.state.loaderVisible);
+    }, 5000);
+  };
+
   render() {
     if (this.props.posts.length === 0) return <Loader />;
 
     return (
       <Wrap {...this.props}>
-        <Transition  >
-          <Loader loaded />
-        </Transition>
+        {console.log(this.props.loaderVisible)}
+        {this.props.loaderVisible ? () => <Loader loaded={true} /> : ""}
         <Fade in={this.props.showVideo}>
           <Modal />
         </Fade>
-
         <Router>
           <div style={{ display: "flex", flex: 1 }}>
             <Header />
@@ -69,8 +79,6 @@ class App extends Component {
               <Route exact path="/contact" component={Contact} />
               <Route exact path="/reel" component={Reel} />
             </div>
-
-            {/* <VideoPlayer /> */}
           </div>
         </Router>
         <Footer />
@@ -85,8 +93,14 @@ const mapStateToProps = state => {
     scrollY: state.video.scrollY,
     pages: state.data.pages,
     posts: state.data.posts,
-    loading: state.data.loading
+    loading: state.data.loading,
+    loaded: state.loader.loaded,
+    loaderVisible: state.loader.visible
   };
 };
 
-export default connect(mapStateToProps, { fetchData })(App);
+export default connect(mapStateToProps, {
+  fetchData,
+  loaderVisible,
+  contentLoaded
+})(App);

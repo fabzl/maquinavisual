@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { connect } from "react-redux";
 import ReactPlayer from "react-player";
 
-import { enableScroll, disableScroll } from "../helpers";
+// import { enableScroll, disableScroll } from "../helpers";
 import { stopVideo } from "../redux/actions";
 import { colors } from "../styles/globals";
 import { Link } from "react-router-dom";
@@ -65,8 +65,8 @@ class Reel extends Component {
           <ReactPlayer
             url="https://vimeo.com/247535876"
             playing={true}
-            width="95%"
-            height="60%"
+            width="100%"
+            height="95%"
           />
         </Content>
       </Overlay>

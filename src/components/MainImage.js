@@ -64,17 +64,17 @@ const Arrow = styled(Link)`
   }
 `;
 
-const Left = styled.span`
-  &:hover {
-    padding-left: 15px;
-  }
-`;
+// const Left = styled.span`
+//   &:hover {
+//     padding-left: 15px;
+//   }
+// `;
 
-const Right = styled.span`
-  &:hover {
-    padding-right: 15px;
-  }
-`;
+// const Right = styled.span`
+//   &:hover {
+//     padding-right: 15px;
+//   }
+// `;
 
 const Center = styled.div`
   display: flex;

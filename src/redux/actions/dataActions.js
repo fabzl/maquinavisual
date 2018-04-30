@@ -1,14 +1,14 @@
-import axios from 'axios';
+import axios from "axios";
 import {
   FETCH_DATA,
   FETCH_DATA_SUCCESS,
-  FETCH_DATA_FAILED,
+  // FETCH_DATA_FAILED,
   CHANGE_LANG
-} from '../types';
+} from "../types";
 
 // import { works } from '../../data';
 
-const apiUrl = 'http://maquinavisual.com/blog';
+const apiUrl = "http://maquinavisual.com/blog";
 const pagesEndPoint = `${apiUrl}/wp-json/wp/v2/pages`; // Endpoint for getting Wordpress Pages
 const postsEndPoint = `${apiUrl}/wp-json/wp/v2/posts`; // Endpoint for getting Wordpress Posts
 
@@ -19,18 +19,18 @@ const fetchSuccess = data => {
   };
 };
 
-const fetchFailed = err => {
-  return {
-    type: FETCH_DATA_FAILED,
-    error: err
-  };
-};
+// const fetchFailed = err => {
+//   return {
+//     type: FETCH_DATA_FAILED,
+//     error: err
+//   };
+// };
 
 export const fetchData = dispatch => async dispatch => {
   let language = navigator.language || navigator.userLanguage;
   language = language.slice(0, 2);
 
-  if (language !== 'es') language = 'en';
+  if (language !== "es") language = "en";
 
   dispatch({
     type: FETCH_DATA

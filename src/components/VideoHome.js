@@ -54,6 +54,7 @@ const Text = styled.div`
 `;
 
 const H2 = styled.h2`
+  font-family: "Poppins:800", "Futura";
   font-size: 32px;
   line-height: 0.9em;
   margin: 0 auto;
@@ -62,15 +63,15 @@ const H2 = styled.h2`
   display: inline-block;
   transition: line-height 1s;
   text-transform: uppercase;
-  font-weight: 700;
-  font-style: italic;
+  font-weight: 900;
+  font-style: bold;
   text-align: center;
   text-shadow: 0px 1px 0px #999;
 
   @media (min-width: 520px) {
     font-size: 42px;
   }
-  poppins: 800 @media (min-width: 720px) {
+  @media (min-width: 720px) {
     font-size: 62px;
   }
 
