@@ -80,7 +80,8 @@ const H2 = styled.h2`
   &::after,
   &::before {
     content: "";
-    display: block;
+    display: none;
+    /* display: block; */
     width: 0;
 
     border-top: 3px solid ${colors.white};
@@ -91,6 +92,8 @@ const H2 = styled.h2`
     margin-top: -15px;
     transform: translateZ(0);
     width: 70px;
+    @media (min-width: 520px) {
+    }
   }
 
   &::before {

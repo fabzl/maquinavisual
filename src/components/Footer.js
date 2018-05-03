@@ -56,6 +56,7 @@ const H4 = styled.h4`
   text-transform: uppercase;
   letter-spacing: 130%;
   white-space: nowrap;
+  font-family: "poppins";
 `;
 
 const BackToTop = styled.div`

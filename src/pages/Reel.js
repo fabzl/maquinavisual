@@ -33,7 +33,7 @@ const Content = styled.div`
 
 const CloseButton = styled.div`
   position: absolute;
-  right: 20px;
+  right: 13px;
   top: 20px;
   color: ${colors.white};
   &:hover {
@@ -66,7 +66,7 @@ class Reel extends Component {
             url="https://vimeo.com/247535876"
             playing={true}
             width="100%"
-            height="95%"
+            height="100%"
           />
         </Content>
       </Overlay>

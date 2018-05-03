@@ -39,7 +39,7 @@ const Content = styled.div`
 
 const CloseButton = styled.div`
   position: absolute;
-  right: 20px;
+  right: 10px;
   top: 20px;
   color: #ddd;
   &:hover {
