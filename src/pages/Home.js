@@ -22,8 +22,9 @@ const H3 = styled.h3`
   margin: 0;
   font-weight: 700;
   font-style: italic;
-  line-height: 1.3em;
-  font-size: 3.2rem;
+  line-height: 1.2em;
+  font-size: 2.9rem;
+  font-family: "poppins";
   text-transform: uppercase;
 `;
 

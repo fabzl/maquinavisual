@@ -181,6 +181,11 @@ class Header extends React.Component {
     this.setState({ openMenu: !this.state.openMenu });
   };
 
+  closeMenu = () => {
+    this.setState({ openMenu: false });
+    console.log("close Menu");
+  };
+
   render() {
     const { language } = this.props;
     return (
@@ -190,6 +195,7 @@ class Header extends React.Component {
             <Logo src={logo} />
           </Link>
         </LogoContainer>
+
         <NavContainer className={this.state.openMenu && "active"}>
           <LinkTo to="/">{translations.header.home[language]}</LinkTo>
 

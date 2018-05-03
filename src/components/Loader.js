@@ -1,18 +1,17 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import logo from "../img/logo_loader.svg";
-
-import { colors, fadeOut } from "../styles/globals";
+import { colors, colorsBGanimation, fadeOut } from "../styles/globals";
 import { growOld } from "../styles/globals";
 
 const Loader = props => {
-  console.dir(props);
+  let kill;
+  // console.dir(props);
   const loaded = props.loaded;
 
-  console.dir("loaded:", loaded);
+  // console.dir("loaded:", loaded);
 
   // console.log("visible:", visible);
-
   const LoaderContent = styled.div`
     position: fixed;
     top: 0;
@@ -23,10 +22,14 @@ const Loader = props => {
     grid-template-columns: repeat(3, 1fr);
     width: 100vw;
     height: 100vh;
-    background: ${colors.violet};
+    /* background: ${colors.violet}; */
     align-items: center;
-    animation: ${loaded ? fadeOut : ""};
-    animation-duration: 800ms;
+    
+    /* los colores de la animacion del fondo tienen algun atao.   */
+    /* fade out funciona pero quiero que desaparezca cuando termina la animación */
+    animation: colorsBGanimation 2s, ${loaded ? fadeOut : ""};
+
+    animation-duration: infinite;
     animation-fill-mode: forwards;
 
     img {

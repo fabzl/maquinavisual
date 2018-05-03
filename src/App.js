@@ -47,13 +47,20 @@ class App extends Component {
   setToDestroy = props => {
     console.log("set to destroy");
     contentLoaded();
-
-    setTimeout(function() {
-      loaderVisible();
+    let kill = false;
+    setTimeout(() => {
       // console.log(this.props.loaderVisible);
-      this.setState({ loaderVisible: false });
-      console.log("After timeout", this.state.loaderVisible);
+      // setState({ loaderVisible: false });
+      // console.dir(kill);
+      kill = true;
+      // console.dir(kill);
+
+      // aca deberia morir el loader
+      // React.unmountComponentAtNode(Loader);
+      // return "";
     }, 5000);
+    console.log(kill);
+    return kill;
   };
 
   render() {
@@ -61,8 +68,7 @@ class App extends Component {
 
     return (
       <Wrap {...this.props}>
-        {console.log(this.props.loaderVisible)}
-        {this.props.loaderVisible ? () => <Loader loaded={true} /> : ""}
+        {/* {this.setToDestroy() ? "" : <Loader id="loader" loaded={true} />} */}
         <Fade in={this.props.showVideo}>
           <Modal />
         </Fade>

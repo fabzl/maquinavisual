@@ -27,6 +27,14 @@ export const Rotate = styled.div`
 `;
 
 // keyframes returns a unique name based on a hash of the contents of the keyframes
+export const colorsBGanimation = keyframes`
+  0%   {background: ${colors.white}}
+  25%  {background: ${colors.violet}};
+  50%  {background: ${colors.orange}};
+  100% {background: ${colors.white}};
+`;
+
+// keyframes returns a unique name based on a hash of the contents of the keyframes
 export const fadeIn = keyframes`
   from {
     opacity: 0;

@@ -55,8 +55,7 @@ const Text = styled.div`
 
 const H2 = styled.h2`
   font-family: "Poppins:800", "Futura";
-  font-size: 32px;
-  line-height: 0.9em;
+
   margin: 0 auto;
   padding: 0 20px;
   transform: translateX(-1px);
@@ -67,6 +66,9 @@ const H2 = styled.h2`
   font-style: bold;
   text-align: center;
   text-shadow: 0px 1px 0px #999;
+
+  font-size: 32px;
+  line-height: 1.2em;
 
   @media (min-width: 520px) {
     font-size: 42px;
