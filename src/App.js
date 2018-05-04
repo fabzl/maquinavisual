@@ -36,8 +36,7 @@ const Wrap = styled.div`
 class App extends Component {
   componentDidMount() {
     this.props.fetchData();
-    this.propsloaderLoading();
-    console.log("after content loadeding :", this.props);
+    this.props.loaderLoading();
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -46,15 +45,9 @@ class App extends Component {
   }
 
   setToDestroy = props => {
-    // console.log("set to destroy");
-    // console.log("after content loaded :", this.props);
+    this.props.contentLoaded();
     setTimeout(() => {
-      console.log("visible :", this.props.visible);
-
-      props.loaderVisible();
-      console.log("visible :", this.props.visible);
-
-      console.log(" after loaderVisible", this.props);
+      loaderVisible();
     }, 10000);
   };
 
@@ -63,9 +56,7 @@ class App extends Component {
 
     return (
       <Wrap {...this.props}>
-        {this.setToDestroy(props)}
-        {console.log("visible :", this.props.visible)}
-        {this.props.visible ? "soy verdadero" : "soy falso"}
+        {this.setToDestroy()}
         <Loader />
         <Fade in={this.props.showVideo}>
           <Modal />

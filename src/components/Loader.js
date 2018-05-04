@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import logo from "../img/logo_loader.svg";
-import { colors, colorsBGanimation, fadeOut } from "../styles/globals";
+import { colors, colorsBGanimation, slideOut } from "../styles/globals";
 import { growOld } from "../styles/globals";
 import { connect } from "react-redux";
 
 const Loader = props => {
-  console.log("visible:", props.visible, "loaded", props.loaded);
+  // console.log("visible:", props.visible, "loaded", props.loaded);
   const LoaderContent = styled.div`
     position: fixed;
     top: 0;
@@ -21,7 +21,7 @@ const Loader = props => {
     background: ${colors.white};
     align-items: center;
 
-    animation: colorsBGanimation 2s, ${props.loaded ? fadeOut : ""};
+    animation: colorsBGanimation 2s, ${props.loaded ? slideOut : ""};
 
     animation-duration: 800ms;
     animation-fill-mode: forwards;

@@ -45,11 +45,27 @@ export const fadeIn = keyframes`
 `;
 
 export const fadeOut = keyframes`
-  from {
+  0% {
     opacity: 1;
   }
-  to {
-    opacity: 0.3;
+  100% {
+    opacity: 0;
+  }
+`;
+
+export const slideOut = keyframes`
+  0% {
+    opacity: 1;
+    transform:translateY(0);
+  }
+  99% {
+    opacity: 0;
+    transform:translateY(0);
+
+  }
+  100% {
+    opacity: 0;
+    transform:translateY(-100%);
   }
 `;
 
