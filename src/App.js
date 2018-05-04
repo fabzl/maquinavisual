@@ -36,7 +36,8 @@ const Wrap = styled.div`
 class App extends Component {
   componentDidMount() {
     this.props.fetchData();
-    loaderLoading();
+    this.propsloaderLoading();
+    console.log("after content loadeding :", this.props);
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -45,22 +46,16 @@ class App extends Component {
   }
 
   setToDestroy = props => {
-    console.log("set to destroy");
-    contentLoaded();
-    let kill = false;
+    // console.log("set to destroy");
+    // console.log("after content loaded :", this.props);
     setTimeout(() => {
-      // console.log(this.props.loaderVisible);
-      // setState({ loaderVisible: false });
-      // console.dir(kill);
-      kill = true;
-      // console.dir(kill);
+      console.log("visible :", this.props.visible);
 
-      // aca deberia morir el loader
-      // React.unmountComponentAtNode(Loader);
-      // return "";
-    }, 5000);
-    console.log(kill);
-    return kill;
+      props.loaderVisible();
+      console.log("visible :", this.props.visible);
+
+      console.log(" after loaderVisible", this.props);
+    }, 10000);
   };
 
   render() {
@@ -68,7 +63,10 @@ class App extends Component {
 
     return (
       <Wrap {...this.props}>
-        {/* {this.setToDestroy() ? "" : <Loader id="loader" loaded={true} />} */}
+        {this.setToDestroy(props)}
+        {console.log("visible :", this.props.visible)}
+        {this.props.visible ? "soy verdadero" : "soy falso"}
+        <Loader />
         <Fade in={this.props.showVideo}>
           <Modal />
         </Fade>
@@ -79,7 +77,6 @@ class App extends Component {
             <div style={{ flex: 1 }}>
               <Route exact path="/" component={Home} />
               <Route exact path="/work" component={Work} />
-
               <Route exact path="/work/:link" component={ShowWork} />
               <Route exact path="/about" component={About} />
               <Route exact path="/contact" component={Contact} />
@@ -101,12 +98,13 @@ const mapStateToProps = state => {
     posts: state.data.posts,
     loading: state.data.loading,
     loaded: state.loader.loaded,
-    loaderVisible: state.loader.visible
+    visible: state.loader.visible
   };
 };
 
 export default connect(mapStateToProps, {
   fetchData,
+  loaderLoading,
   loaderVisible,
   contentLoaded
 })(App);

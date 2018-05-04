@@ -3,33 +3,27 @@ import styled from "styled-components";
 import logo from "../img/logo_loader.svg";
 import { colors, colorsBGanimation, fadeOut } from "../styles/globals";
 import { growOld } from "../styles/globals";
+import { connect } from "react-redux";
 
 const Loader = props => {
-  let kill;
-  // console.dir(props);
-  const loaded = props.loaded;
-
-  // console.dir("loaded:", loaded);
-
-  // console.log("visible:", visible);
+  console.log("visible:", props.visible, "loaded", props.loaded);
   const LoaderContent = styled.div`
     position: fixed;
     top: 0;
     left: 0;
     z-index: 999999;
+    /* display: ${props.visible ? "grid" : "none"}; */
     display: grid;
     grid-template-rows: repeat(3, 1fr);
     grid-template-columns: repeat(3, 1fr);
     width: 100vw;
     height: 100vh;
-    /* background: ${colors.violet}; */
+    background: ${colors.white};
     align-items: center;
-    
-    /* los colores de la animacion del fondo tienen algun atao.   */
-    /* fade out funciona pero quiero que desaparezca cuando termina la animación */
-    animation: colorsBGanimation 2s, ${loaded ? fadeOut : ""};
 
-    animation-duration: infinite;
+    animation: colorsBGanimation 2s, ${props.loaded ? fadeOut : ""};
+
+    animation-duration: 800ms;
     animation-fill-mode: forwards;
 
     img {
@@ -55,4 +49,11 @@ const Loader = props => {
   );
 };
 
-export default Loader;
+const mapStateToProps = state => {
+  return {
+    loaded: state.loader.loaded,
+    visible: state.loader.visible
+  };
+};
+
+export default connect(mapStateToProps)(Loader);
