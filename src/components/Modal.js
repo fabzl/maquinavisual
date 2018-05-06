@@ -70,6 +70,7 @@ class Modal extends Component {
 
           <ReactPlayer
             url="https://vimeo.com/247535876"
+            isPlayable={true}
             playing={true}
             width="100%"
             height="90%"

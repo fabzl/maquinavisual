@@ -4,7 +4,7 @@ import styled from "styled-components";
 import ReactPlayer from "react-player";
 import { connect } from "react-redux";
 import { stopVideo } from "../redux/actions";
-import { colors } from "../styles/globals";
+import { colors, tvOn } from "../styles/globals";
 
 const Modal = styled.div`
   display: ${props => (props.showVideo ? "block" : "none")};
