@@ -176,6 +176,12 @@ class Header extends React.Component {
   state = {
     openMenu: false
   };
+  componentDidMount() {
+    // console.log(
+    //   "soy component did mount y me gusta flotar : ",
+    //   this.state.openMenu
+    // );
+  }
 
   openMenu = () => {
     this.setState({ openMenu: !this.state.openMenu });
@@ -184,6 +190,12 @@ class Header extends React.Component {
   closeMenu = () => {
     this.setState({ openMenu: false });
     console.log("close Menu");
+  };
+
+  checkMobileNav = props => {
+    if (this.state.openMenu && "active") {
+      this.closeMenu();
+    }
   };
 
   render() {
@@ -197,19 +209,32 @@ class Header extends React.Component {
         </LogoContainer>
 
         <NavContainer className={this.state.openMenu && "active"}>
-          <LinkTo to="/">{translations.header.home[language]}</LinkTo>
+          <LinkTo onClick={this.checkMobileNav} to="/">
+            {translations.header.home[language]}
+          </LinkTo>
 
-          <LinkTo to="/reel">{translations.header.reel[language]}</LinkTo>
+          <LinkTo onClick={this.checkMobileNav} to="/reel">
+            {translations.header.reel[language]}
+          </LinkTo>
 
-          <LinkTo to="/work">{translations.header.work[language]}</LinkTo>
+          <LinkTo onClick={this.checkMobileNav} to="/work">
+            {translations.header.work[language]}
+          </LinkTo>
 
-          <LinkTo to="/about">{translations.header.about[language]}</LinkTo>
+          <LinkTo onClick={this.checkMobileNav} to="/about">
+            {translations.header.about[language]}
+          </LinkTo>
 
-          <LinkTo to="/contact">{translations.header.contact[language]}</LinkTo>
+          <LinkTo onClick={this.checkMobileNav} to="/contact">
+            {translations.header.contact[language]}
+          </LinkTo>
 
           <Social header />
 
-          <BackToTop className={this.state.openMenu && "active"}>
+          <BackToTop
+            onClick={this.checkMobileNav}
+            className={this.state.openMenu && "active"}
+          >
             <ToTop onClick={() => smoothScroll()}>
               <span>
                 <i className="fas fa-angle-up fa-4x" />

@@ -46,9 +46,12 @@ class App extends Component {
 
   setToDestroy = props => {
     this.props.contentLoaded();
-    setTimeout(() => {
-      this.props.loaderVisible();
-    }, 800);
+    // setTimeout(() => {
+    //   this.props.loaderVisible();
+    // }, 800);
+  };
+  checkMobileNav = props => {
+    console.log("holii");
   };
 
   render() {
