@@ -47,8 +47,8 @@ class App extends Component {
   setToDestroy = props => {
     this.props.contentLoaded();
     setTimeout(() => {
-      loaderVisible();
-    }, 10000);
+      this.props.loaderVisible();
+    }, 800);
   };
 
   render() {
