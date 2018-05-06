@@ -5,8 +5,10 @@ import ReactPlayer from "react-player";
 
 // import { enableScroll, disableScroll } from "../helpers";
 import { stopVideo } from "../redux/actions";
-import { colors } from "../styles/globals";
+// import { colors } from "../styles/globals";
 import { Link } from "react-router-dom";
+
+import { colors, tvOn } from "../styles/globals";
 
 const Overlay = styled.div`
   position: fixed; /* Sit on top of the page content */
@@ -16,7 +18,7 @@ const Overlay = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 1);
   z-index: 9999; /* Specify a stack order in case you're using a different order for other elements */
   cursor: pointer; /* Add a pointer on hover */
   /* transition: opacity 300ms ease-in-out;
@@ -29,6 +31,7 @@ const Content = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
+  animation: ${tvOn} 2s forwards;
 `;
 
 const CloseButton = styled.div`
@@ -66,7 +69,7 @@ class Reel extends Component {
             url="https://vimeo.com/247535876"
             playing={true}
             width="100%"
-            height="100%"
+            height="90%"
           />
         </Content>
       </Overlay>

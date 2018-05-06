@@ -1,12 +1,13 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
+import React, { Component } from "react";
+import styled from "styled-components";
 // import Player from '@vimeo/player';
-import ReactPlayer from 'react-player';
-import { connect } from 'react-redux';
-import { stopVideo } from '../redux/actions';
+import ReactPlayer from "react-player";
+import { connect } from "react-redux";
+import { stopVideo } from "../redux/actions";
+import { colors } from "../styles/globals";
 
 const Modal = styled.div`
-  display: ${props => (props.showVideo ? 'block' : 'none')};
+  display: ${props => (props.showVideo ? "block" : "none")};
   position: fixed;
   z-index: 1000;
   top: 0;
@@ -16,8 +17,8 @@ const Modal = styled.div`
 `;
 
 const Holder = styled.div`
-  top: ${props => (props.showHolder ? 0 : '50%')};
-  bottom: ${props => (props.showHolder ? 0 : '50%')};
+  top: ${props => (props.showHolder ? 0 : "50%")};
+  bottom: ${props => (props.showHolder ? 0 : "50%")};
   left: 100px;
   right: 100px;
   position: absolute;
@@ -53,7 +54,7 @@ const Player = styled.div`
 
 const Close = styled.a`
   display: inline-block;
-  font: normal normal normal 14px/1 'icons';
+  font: normal normal normal 14px/1 "icons";
   font-size: inherit;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
@@ -63,7 +64,8 @@ const Close = styled.a`
   right: 2.6%;
   padding: 2px;
   font-size: 62px;
-  color: #fff;
+
+  color: ${colors.white};
   text-decoration: none;
   margin: -26vw -0.5em 0;
   opacity: ${props => (props.showVideo ? 1 : 0)};

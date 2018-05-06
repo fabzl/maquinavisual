@@ -102,7 +102,7 @@ const Item = ({ item }) => <Laurel>{item}</Laurel>;
 const About = props => {
   const { data, language } = props;
   const {
-    about_image_big,
+    // about_image_big,
     about_image_small_1,
     about_image_small_2,
     about_image_small_3,

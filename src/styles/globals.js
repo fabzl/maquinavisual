@@ -53,6 +53,25 @@ export const fadeOut = keyframes`
   }
 `;
 
+export const tvOn = keyframes`
+  0% {
+    opacity: 0;
+    height: 70%; 
+    width: 100%;
+  }
+  80% {
+    opacity: 0;
+    height: 70%; 
+    width: 100%;
+  }
+  100% {
+    opacity: 1;
+    height: 90%; 
+    width: 100%;
+  }
+ 
+`;
+
 export const slideOut = keyframes`
   0% {
     opacity: 1;

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import logo from "../img/logo_loader.svg";
-import { colors, slideOut } from "../styles/globals";
+import { colors, slideOut, colorsBGanimation } from "../styles/globals";
 import { growOld } from "../styles/globals";
 import { connect } from "react-redux";
 
@@ -21,7 +21,7 @@ const Loader = props => {
     background: ${colors.white};
     align-items: center;
 
-    animation: ${props.loaded ? slideOut : ""};
+    animation:  ${colorsBGanimation} 10s,${props.loaded ? slideOut : ""};
 
     animation-duration: 800ms;
     animation-fill-mode: forwards;
