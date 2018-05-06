@@ -7,7 +7,6 @@ import translations from "../translations";
 import logo from "../img/logo_loader.svg";
 
 import { colors } from "../styles/globals";
-import Footer from "../components/Footer";
 
 const Wrap = styled.div`
   height: 50vh;
@@ -113,7 +112,7 @@ const About = props => {
     premios,
     awards
   } = data;
-  console.log(data);
+
   const premiosArray = {
     es: premios.split(" // "),
     en: awards.split(" // ")
@@ -145,7 +144,6 @@ const About = props => {
           </div>
         </Box>
       </Prizes>
-      <Footer />
     </div>
   );
 };
