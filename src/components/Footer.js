@@ -139,12 +139,12 @@ const Footer = props => (
     <Content>
       <Social />
       <General>
-        <H4>3D animation & post production</H4>
+        {/* <H4>3D animation & post production</H4> */}
         <div className="end-line-footer">
           <span className="line" />
-          <H6 data-translatable>
+          {/* <H6 data-translatable> 
             © {new Date().getFullYear()} MAQUINA VISUAL SOME RIGHTS RESERVED.
-          </H6>
+          </H6>*/}
         </div>
         <Links>
           <LinkTo href="tel:+56982000000">

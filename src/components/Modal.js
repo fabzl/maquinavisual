@@ -16,7 +16,7 @@ const Overlay = styled.div`
   right: 0;
   bottom: 0;
   background-color: #000;
-  /* background-color: rgba(0, 0, 0, 0.5); */
+
   z-index: 9999; /* Specify a stack order in case you're using a different order for other elements */
   cursor: pointer; /* Add a pointer on hover */
   /* transition: opacity 300ms ease-in-out;
@@ -70,8 +70,8 @@ class Modal extends Component {
 
           <ReactPlayer
             url="https://vimeo.com/247535876"
-            isPlayable={true}
             playing={true}
+            autoplay
             width="100%"
             height="90%"
           />
