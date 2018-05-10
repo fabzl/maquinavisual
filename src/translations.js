@@ -49,6 +49,12 @@ const Translations = {
       en: "Client",
       es: "Cliente"
     }
+  },
+  contact: {
+    title: {
+      en: "Let's make incredible happen",
+      es: "Hagamos cosas increíbles"
+    }
   }
 };
 

@@ -99,13 +99,11 @@ class VideoPlayer extends Component {
   }
 
   closeVideo = async () => {
-    // await this.player.pause();
     this.setState({ showHolder: false, playing: false });
     this.props.stopVideo();
   };
 
   render() {
-    // https://player.vimeo.com/video/256368414
     return (
       <Modal showVideo={this.props.showVideo} onClick={this.closeVideo}>
         <Close showVideo={this.props.showVideo} />
@@ -120,10 +118,6 @@ class VideoPlayer extends Component {
               playing={this.state.playing}
               wrapper={Player}
             />
-            {/* <Iframe
-              innerRef={iframe => (this.iframe = iframe)}
-              src={`https://player.vimeo.com/video/${this.props.id}`}
-            /> */}
           </Responsive>
         </Holder>
       </Modal>
@@ -139,15 +133,3 @@ const mapStateToProps = state => {
 };
 
 export default connect(mapStateToProps, { stopVideo })(VideoPlayer);
-
-// {props.showVideo && (
-//   <Iframe
-//     src="https://player.vimeo.com/video/230218440?autoplay=1&amp;color=ffffff&amp;title=0&amp;byline=0&amp;portrait=0&amp;hd=1"
-//     frameborder="0"
-//     webkitallowfullscreen=""
-//     mozallowfullscreen=""
-//     allowfullscreen=""
-//     data-ready="false"
-//     onLoad={() => console.log('Load')}
-//   />
-// )}

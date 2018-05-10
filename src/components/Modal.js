@@ -5,7 +5,7 @@ import ReactPlayer from "react-player";
 
 // import { enableScroll, disableScroll } from "../helpers";
 import { stopVideo } from "../redux/actions";
-import { colors, tvOn } from "../styles/globals";
+import { tvOn } from "../styles/globals";
 
 const Overlay = styled.div`
   position: fixed; /* Sit on top of the page content */

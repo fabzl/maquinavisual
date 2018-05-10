@@ -49,13 +49,11 @@ const Text = styled.div`
   }
   text-align: center;
   margin: 0 auto;
-
-  color: ${props => (props.fontColor ? "#fff" : "#fff")};
+  color: ${colors.white};
 `;
 
 const H2 = styled.h2`
   font-family: "Poppins:800", "Futura";
-
   margin: 0 auto;
   padding: 0 20px;
   transform: translateX(-1px);
@@ -114,7 +112,7 @@ WebFont.load({
 export default props => {
   let video = "video/videoIntroXX.mp4";
   let videoLink = video.replace("XX", props.contact ? "02" : "03");
-  // console.log(props.fontColor);
+
   return (
     <Section {...props}>
       <VideoContainer>
