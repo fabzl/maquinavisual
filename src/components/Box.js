@@ -102,8 +102,8 @@ class Box extends Component {
         >
           <Content>
             <Middle>
-              <h4>{this.props.title}</h4>
-              <h3>{this.props.client}</h3>
+              <h4>{this.props.client}</h4>
+              <h3>{this.props.title}</h3>
             </Middle>
           </Content>
         </LinkTo>
