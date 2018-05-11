@@ -41,6 +41,7 @@ const LinkTo = styled(Link)`
 
 const Home = props => (
   <div>
+    {console.log(props)}
     <VideoHome title={translations.home.title[props.language]} />
     <Grid data={props.data} language={props.language} />
     <AllWork>
@@ -54,6 +55,7 @@ const Home = props => (
 const mapStateToProps = state => {
   return {
     data: state.data.posts,
+    dataHome: state.data.pages[3].acf,
     language: state.data.language
   };
 };

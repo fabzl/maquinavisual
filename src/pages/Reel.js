@@ -55,7 +55,6 @@ class Reel extends Component {
   }
 
   render() {
-    // <ReactPlayer url="https://vimeo.com/247535876" playing={true} />
     return (
       <Overlay {...this.props}>
         <Content>
@@ -66,7 +65,7 @@ class Reel extends Component {
           </Link>
 
           <ReactPlayer
-            url="https://vimeo.com/247535876"
+            url={this.props.dataHome.reel_url}
             playing={true}
             width="100%"
             height="90%"
@@ -77,4 +76,12 @@ class Reel extends Component {
   }
 }
 
-export default connect(null, { stopVideo })(Reel);
+const mapStateToProps = state => {
+  return {
+    data: state.data.posts,
+    dataHome: state.data.pages[3].acf,
+    language: state.data.language
+  };
+};
+
+export default connect(mapStateToProps, { stopVideo })(Reel);
