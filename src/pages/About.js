@@ -79,6 +79,7 @@ const Prizes = styled.div`
   display: flex;
   color: ${colors.white};
   flex: 1;
+  flex-direction: row;
 `;
 
 const Box = styled.div`
@@ -137,7 +138,7 @@ const About = props => {
               {translations.about.prizes[props.language]}
             </H2>
             {premiosArray[props.language].map(item => (
-              <div key={item}>
+              <div className="premio" key={item}>
                 <Item item={item} />
               </div>
             ))}
@@ -150,7 +151,7 @@ const About = props => {
 
 const mapStateToProps = state => {
   return {
-    data: state.data.pages[0].acf,
+    data: state.data.pages[1].acf,
     language: state.data.language
   };
 };

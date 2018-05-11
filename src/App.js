@@ -36,7 +36,6 @@ class App extends Component {
   componentDidMount() {
     this.props.fetchData();
     this.props.loaderLoading();
-
     // window.scrollTo(0, 0);
   }
 

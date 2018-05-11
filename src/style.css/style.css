@@ -104,7 +104,7 @@ body {
   font-variant-ligatures: common-ligatures discretionary-ligatures historical-ligatures;
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
-  font-smooth: always; }
+  font-smoothing: always; }
 
 /**
  * Paragraphs
