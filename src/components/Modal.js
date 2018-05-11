@@ -69,7 +69,7 @@ class Modal extends Component {
           </CloseButton>
 
           <ReactPlayer
-            url="https://vimeo.com/247535876"
+            url={this}
             playing={true}
             autoplay
             width="100%"

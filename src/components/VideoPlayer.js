@@ -64,7 +64,6 @@ const Close = styled.a`
   right: 2.6%;
   padding: 2px;
   font-size: 62px;
-
   color: ${colors.white};
   text-decoration: none;
   margin: -26vw -0.5em 0;

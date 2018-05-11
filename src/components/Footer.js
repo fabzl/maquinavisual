@@ -2,19 +2,24 @@ import React from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
 
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
 import logo from "../img/logo_footer.svg";
 import translations from "../translations";
 import { colors } from "../styles/globals";
 import Social from "./Social";
 
+import { Link, NavLink } from "react-router-dom";
+
 const Logo = styled.img`
-  width: 100%;
+  width: 68%;
   @media (min-width: 500px) {
-    min-width: 350px;
+    min-width: 250px;
     width: 50%;
   }
   margin: 0 auto;
   display: flex;
+  max-width: 300px;
 `;
 
 const Wrap = styled.footer`
@@ -48,16 +53,16 @@ const General = styled.div`
   }
 `;
 
-const H4 = styled.h4`
-  font-weight: 500;
-  margin: 0;
-  font-size: 14px;
-  font-style: italic;
-  text-transform: uppercase;
-  letter-spacing: 130%;
-  white-space: nowrap;
-  font-family: "poppins";
-`;
+// const H4 = styled.h4`
+//   font-weight: 500;
+//   margin: 0;
+//   font-size: 14px;
+//   font-style: italic;
+//   text-transform: uppercase;
+//   letter-spacing: 130%;
+//   white-space: nowrap;
+//   font-family: "poppins";
+// `;
 
 const BackToTop = styled.div`
   flex: 1;
@@ -76,11 +81,13 @@ const Links = styled.div`
   }
 `;
 
-const H6 = styled.h6`
-  @media (max-width: 740px) {
-    font-size: 12px;
-  }
-`;
+// const H6 = styled.h6`
+//   @media (max-width: 740px) {
+//     font-size: 12px;
+//   }
+// `;
+
+// const Link = styled(NavLink)``;
 
 const LinkTo = styled.a`
   font-weight: 500;
@@ -135,17 +142,19 @@ const smoothScroll = () => {
 
 const Footer = props => (
   <Wrap>
-    <Logo src={logo} />
+    <Router>
+      <Route to="/">
+        <Logo src={logo} onclick="/" />
+      </Route>
+    </Router>
     <Content>
       <Social />
       <General>
         {/* <H4>3D animation & post production</H4> */}
-        <div className="end-line-footer">
-          <span className="line" />
-          {/* <H6 data-translatable> 
+
+        {/* <H6 data-translatable> 
             © {new Date().getFullYear()} MAQUINA VISUAL SOME RIGHTS RESERVED.
           </H6>*/}
-        </div>
         <Links>
           <LinkTo href="tel:+56982000000">
             <i className="fas fa-mobile-alt fa-2x" /> +56 9 7623 4946
