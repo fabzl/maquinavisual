@@ -144,7 +144,7 @@ const Footer = props => (
   <Wrap>
     <Router>
       <Route to="/">
-        <Logo src={logo} onclick="/" />
+        <Logo src={logo} href="/" />
       </Route>
     </Router>
     <Content>
@@ -156,10 +156,18 @@ const Footer = props => (
             © {new Date().getFullYear()} MAQUINA VISUAL SOME RIGHTS RESERVED.
           </H6>*/}
         <Links>
-          <LinkTo href="tel:+56982000000">
-            <i className="fas fa-mobile-alt fa-2x" /> +56 9 7623 4946
+          {console.log(props.dataContact)}
+          <LinkTo href={"tel:" + props.dataContact.telefono_de_contacto}>
+            <i className="fas fa-mobile-alt fa-2x" />
+            {props.dataContact.telefono_de_contacto}
           </LinkTo>
-          <LinkTo href="mailto:contacto@maquinavisual.com?subject=Contacto%20desde%20Maquina%20Visual">
+          <LinkTo
+            href={
+              "mailto:" +
+              props.dataContact.mail_de_contacto +
+              "?subject=Contacto%20desde%20Maquina%20Visual"
+            }
+          >
             <i className="far fa-envelope fa-2x" />contacto@maquinavisual.com
           </LinkTo>
         </Links>
@@ -178,7 +186,8 @@ const Footer = props => (
 
 const mapStateToProps = state => {
   return {
-    language: state.data.language
+    language: state.data.language,
+    dataContact: state.data.pages[0].acf
   };
 };
 

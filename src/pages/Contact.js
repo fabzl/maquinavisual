@@ -6,18 +6,26 @@ import translations from "../translations";
 
 const Contact = props => (
   <div>
+    {console.log(props.dataContact)}
     <VideoHome
       contact
       fontColor
-      title={translations.contact.title[props.language]}
+      title={
+        props.language === "es"
+          ? props.dataContact.frase_contacto
+          : props.dataContact.contact_phrase
+      }
     />
   </div>
 );
 
+// {frase_contacto: false, contact_phrase: false, mail_de_contacto: false, telefono_de_contacto: false, video: false
+
 const mapStateToProps = state => {
   return {
     data: state.data.posts,
-    language: state.data.language
+    language: state.data.language,
+    dataContact: state.data.pages[0].acf
   };
 };
 
