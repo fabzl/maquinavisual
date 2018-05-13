@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import { connect } from "react-redux";
-import ReactPlayer from "react-player";
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import { connect } from 'react-redux';
+import ReactPlayer from 'react-player';
 
 // import { enableScroll, disableScroll } from "../helpers";
-import { stopVideo } from "../redux/actions";
-import { tvOn } from "../styles/globals";
+import { stopVideo } from '../redux/actions';
+import { tvOn } from '../styles/globals';
 
 const Overlay = styled.div`
   position: fixed; /* Sit on top of the page content */
@@ -69,7 +69,7 @@ class Modal extends Component {
           </CloseButton>
 
           <ReactPlayer
-            url={this}
+            url={this.props.url}
             playing={true}
             autoplay
             width="100%"
@@ -81,4 +81,10 @@ class Modal extends Component {
   }
 }
 
-export default connect(null, { stopVideo })(Modal);
+const mapStateToProps = state => {
+  return {
+    url: state.video.url
+  };
+};
+
+export default connect(mapStateToProps, { stopVideo })(Modal);
