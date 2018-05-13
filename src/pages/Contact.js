@@ -6,8 +6,9 @@ import translations from "../translations";
 
 const Contact = props => (
   <div>
-    {console.log(props.dataContact)}
+    {console.log(props.dataContact.video)}
     <VideoHome
+      video={props.dataContact.video}
       contact
       fontColor
       title={

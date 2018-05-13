@@ -14,7 +14,7 @@ import { Link, NavLink } from "react-router-dom";
 const Logo = styled.img`
   width: 68%;
   @media (min-width: 500px) {
-    min-width: 250px;
+    min-width: 150px;
     width: 50%;
   }
   margin: 0 auto;
@@ -144,19 +144,13 @@ const Footer = props => (
   <Wrap>
     <Router>
       <Route to="/">
-        <Logo src={logo} href="/" />
+        <Logo src={logo} />
       </Route>
     </Router>
     <Content>
       <Social />
       <General>
-        {/* <H4>3D animation & post production</H4> */}
-
-        {/* <H6 data-translatable> 
-            © {new Date().getFullYear()} MAQUINA VISUAL SOME RIGHTS RESERVED.
-          </H6>*/}
         <Links>
-          {console.log(props.dataContact)}
           <LinkTo href={"tel:" + props.dataContact.telefono_de_contacto}>
             <i className="fas fa-mobile-alt fa-2x" />
             {props.dataContact.telefono_de_contacto}

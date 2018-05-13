@@ -78,7 +78,7 @@ const Close = styled.a`
 class VideoPlayer extends Component {
   state = {
     showHolder: false,
-    playing: false
+    playing: true
   };
 
   componentDidUpdate = async (prevProps, prevState) => {

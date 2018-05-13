@@ -110,14 +110,19 @@ WebFont.load({
 });
 
 export default props => {
-  let video = "video/videoIntroXX.mp4";
-  let videoLink = video.replace("XX", props.contact ? "02" : "03");
+  let videoOverride;
+  videoOverride = props.video;
+  let videosArray = videoOverride.split("||");
+  let randomValue = Math.floor(Math.random() * videosArray.length);
+
+  let video = videosArray[randomValue];
+  console.log("videoOverride :", video);
 
   return (
     <Section {...props}>
       <VideoContainer>
         <Video autoPlay muted loop>
-          <source src={videoLink} type="video/mp4" />
+          <source src={video} type="video/mp4" />
         </Video>
       </VideoContainer>
 
