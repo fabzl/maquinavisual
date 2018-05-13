@@ -130,7 +130,7 @@ const ToTop = styled.a`
   }
 `;
 
-const smoothScroll = () => {
+export const smoothScroll = () => {
   const scrollY = window.scrollY;
   if (scrollY > 0) {
     setTimeout(() => {
