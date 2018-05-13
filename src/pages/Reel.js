@@ -23,7 +23,7 @@ const Overlay = styled.div`
   z-index: 9999; /* Specify a stack order in case you're using a different order for other elements */
   cursor: pointer; /* Add a pointer on hover */
   animation: 800ms ease-in-out;
-  animation: fadeIn;
+  animation: ${fadeIn};
 `;
 
 const Content = styled.div`

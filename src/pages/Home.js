@@ -43,7 +43,11 @@ const Home = props => (
   <div>
     <VideoHome
       video={props.dataHome.videos}
-      title={translations.home.title[props.language]}
+      title={
+        props.language === "es"
+          ? props.dataHome.intro_text_español
+          : props.dataHome.intro_text_english
+      }
     />
     <Grid data={props.data} language={props.language} />
     <AllWork>

@@ -2,11 +2,10 @@ import React from "react";
 import { connect } from "react-redux";
 import VideoHome from "../components/VideoHome";
 
-import translations from "../translations";
+// import translations from "../translations";
 
 const Contact = props => (
   <div>
-    {console.log(props.dataContact.video)}
     <VideoHome
       video={props.dataContact.video}
       contact
@@ -19,8 +18,6 @@ const Contact = props => (
     />
   </div>
 );
-
-// {frase_contacto: false, contact_phrase: false, mail_de_contacto: false, telefono_de_contacto: false, video: false
 
 const mapStateToProps = state => {
   return {

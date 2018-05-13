@@ -9,7 +9,7 @@ import translations from "../translations";
 import { colors } from "../styles/globals";
 import Social from "./Social";
 
-import { Link, NavLink } from "react-router-dom";
+// import { Link, NavLink } from "react-router-dom";
 
 const Logo = styled.img`
   width: 68%;
