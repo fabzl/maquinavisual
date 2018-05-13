@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
 import ReactPlayer from "react-player";
+import { fadeIn } from "../styles/globals";
 
 // import { enableScroll, disableScroll } from "../helpers";
 import { stopVideo } from "../redux/actions";
@@ -21,8 +22,8 @@ const Overlay = styled.div`
   background-color: rgba(0, 0, 0, 1);
   z-index: 9999; /* Specify a stack order in case you're using a different order for other elements */
   cursor: pointer; /* Add a pointer on hover */
-  /* transition: opacity 300ms ease-in-out;
-  opacity: 0; */
+  animation: 800ms ease-in-out;
+  animation: fadeIn;
 `;
 
 const Content = styled.div`

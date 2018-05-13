@@ -39,10 +39,6 @@ const LinkTo = styled(Link)`
   }
 `;
 
-const goTop = props => {
-  console.log("goTop");
-};
-
 const Home = props => (
   <div>
     <VideoHome
@@ -52,9 +48,7 @@ const Home = props => (
     <Grid data={props.data} language={props.language} />
     <AllWork>
       <H3>
-        <LinkTo onClick={console.log("goTop")} to="/work">
-          {translations.home.link[props.language]}
-        </LinkTo>
+        <LinkTo to="/work">{translations.home.link[props.language]}</LinkTo>
       </H3>
     </AllWork>
   </div>
