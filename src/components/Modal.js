@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
-import { connect } from 'react-redux';
-import ReactPlayer from 'react-player';
+import React, { Component } from "react";
+import styled from "styled-components";
+import { connect } from "react-redux";
+import ReactPlayer from "react-player";
 
 // import { enableScroll, disableScroll } from "../helpers";
-import { stopVideo } from '../redux/actions';
-import { tvOn } from '../styles/globals';
+import { stopVideo } from "../redux/actions";
+import { tvOn } from "../styles/globals";
 
 const Overlay = styled.div`
   position: fixed; /* Sit on top of the page content */
@@ -31,8 +31,10 @@ const Content = styled.div`
   border: 1px solid white;
   width: 100%;
   height: 100%; */
+  border: 1px solid white;
   display: flex;
   height: 100%;
+  width: 100%;
   justify-content: center;
   align-items: center;
   position: relative;
@@ -42,7 +44,7 @@ const Content = styled.div`
 const CloseButton = styled.div`
   position: absolute;
   right: 10px;
-  top: 20px;
+  top: 10px;
   color: #ddd;
   &:hover {
     opacity: 0.5;
@@ -71,9 +73,10 @@ class Modal extends Component {
           <ReactPlayer
             url={this.props.url}
             playing={true}
-            autoplay
+            autoPlay
+            controls
             width="100%"
-            height="90%"
+            height="100vmin"
           />
         </Content>
       </Overlay>

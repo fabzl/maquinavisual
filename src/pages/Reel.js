@@ -68,8 +68,16 @@ class Reel extends Component {
           <ReactPlayer
             url={this.props.dataHome.reel_url}
             playing={true}
+            autoPlay
+            controls
             width="100%"
             height="90%"
+            config={{
+              vimeo: {
+                onReady: true,
+                autoplay: true
+              }
+            }}
           />
         </Content>
       </Overlay>

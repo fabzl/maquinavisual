@@ -37,7 +37,7 @@ export const fetchData = dispatch => async dispatch => {
   });
 
   let res = await axios.get(postsEndPoint);
-  // Limpiar los daots
+  // Limpiar los datos
   const posts = res.data.filter(item => item.acf.avatar_picture);
 
   res = await axios.get(pagesEndPoint);
