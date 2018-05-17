@@ -19,8 +19,8 @@ const Modal = styled.div`
 const Holder = styled.div`
   top: ${props => (props.showHolder ? 0 : "50%")};
   bottom: ${props => (props.showHolder ? 0 : "50%")};
-  left: 100px;
-  right: 100px;
+  /* left: 100px;
+  right: 100px; */
   position: absolute;
   overflow: hidden;
   transition: top 0.5s, bottom 0.5s, opacity 0.3s;
@@ -36,6 +36,7 @@ const Responsive = styled.div`
   top: 50%;
   left: 50%;
   width: 100%;
+  height: 100%;
   transform: translate(-50%, -50%);
   max-width: 175vh;
   padding-bottom: ${props => (props.showVideo ? 56.25 : 50)}%;
@@ -44,8 +45,8 @@ const Responsive = styled.div`
 const Player = styled.div`
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
+  bottom: 0;
+  /* width: 100%; */
   height: 100%;
   z-index: 0;
   transform: translateZ(0);
@@ -102,6 +103,14 @@ class VideoPlayer extends Component {
     this.props.stopVideo();
   };
 
+  videoEnd = () => {
+    console.log("videoEND");
+  };
+
+  videoReady = () => {
+    console.log("videoReady");
+  };
+
   render() {
     return (
       <Modal showVideo={this.props.showVideo} onClick={this.closeVideo}>
@@ -116,6 +125,8 @@ class VideoPlayer extends Component {
               url={this.props.url}
               playing={this.state.playing}
               wrapper={Player}
+              onEnded={this.videoEnd}
+              onReady={this.videoReady}
             />
           </Responsive>
         </Holder>

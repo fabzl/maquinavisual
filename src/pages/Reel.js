@@ -27,7 +27,7 @@ const Overlay = styled.div`
 `;
 
 const Content = styled.div`
-  display: flex;
+  display: block;
   height: 100%;
   justify-content: center;
   align-items: center;
@@ -71,7 +71,7 @@ class Reel extends Component {
             autoPlay
             controls
             width="100%"
-            height="90%"
+            height="100%"
             config={{
               vimeo: {
                 onReady: true,

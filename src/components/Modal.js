@@ -61,6 +61,10 @@ class Modal extends Component {
     // window.scrollTo(0, this.props.scrollY);
   }
 
+  videoEnd = () => {
+    console.log("videoEND");
+  };
+
   render() {
     // <ReactPlayer url="https://vimeo.com/247535876" playing={true} />
     return (
@@ -77,6 +81,7 @@ class Modal extends Component {
             controls
             width="100%"
             height="100vmin"
+            onEnded={this.videoEnd}
           />
         </Content>
       </Overlay>

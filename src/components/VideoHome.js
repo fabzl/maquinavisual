@@ -110,7 +110,6 @@ WebFont.load({
 });
 
 export default props => {
-  
   let videoOverride = props.video;
   let videosArray = videoOverride.split("||");
   let randomValue = Math.floor(Math.random() * videosArray.length);
