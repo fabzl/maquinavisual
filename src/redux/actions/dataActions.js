@@ -8,7 +8,7 @@ import {
 
 // import { works } from '../../data';
 
-const apiUrl = "http://maquinavisual.com/blog";
+const apiUrl = "https://maquinavisual.com/blog";
 const pagesEndPoint = `${apiUrl}/wp-json/wp/v2/pages`; // Endpoint for getting Wordpress Pages
 const postsEndPoint = `${apiUrl}/wp-json/wp/v2/posts`; // Endpoint for getting Wordpress Posts
 

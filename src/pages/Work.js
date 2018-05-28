@@ -5,6 +5,7 @@ import { smoothScroll } from "../components/Footer";
 
 const Work = props => (
   <div>
+    
     {smoothScroll()}
     <Grid data={props.data} language={props.language} link large />
   </div>
