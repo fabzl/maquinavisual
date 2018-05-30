@@ -37,7 +37,7 @@ const H2 = styled.h2`
   font-size: 18px;
   padding: 0 10%;
   @media (min-width: 520px) {
-    font-size: 20px;
+    font-size: 22px;
     padding: 0;
   }
   @media (min-width: 720px) {
@@ -69,6 +69,13 @@ const Laurel = styled.div`
   }
 `;
 
+const PrizesContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  /* grid-auto-rows: 430px; */
+  flex-direction: column;
+`;
+
 const Images = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -91,7 +98,7 @@ const Prizes = styled.div`
 `;
 
 const Box = styled.div`
-  flex-direction: row;
+  flex-direction: column;
   padding: 15px 0;
   flex: 1;
   display: flex;
@@ -145,16 +152,14 @@ const About = props => {
       </Images>
       <Prizes>
         <Box>
-          <div>
-            <H2 className="dark">
-              {translations.about.prizes[props.language]}
-            </H2>
+          <H2 className="dark">{translations.about.prizes[props.language]}</H2>
+          <PrizesContainer>
             {premiosArray[props.language].map(item => (
               <div className="premio" key={item}>
                 <Item item={item} />
               </div>
             ))}
-          </div>
+          </PrizesContainer>
         </Box>
       </Prizes>
     </div>
