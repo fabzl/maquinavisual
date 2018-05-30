@@ -112,9 +112,10 @@ const LinkTo = styled.a`
 
 const ToTop = styled.a`
   color: ${colors.white};
-  font-size: 14px;
+  font-size: 10px;
   display: inline-block;
   overflow: hidden;
+  font-weight: 200;
   text-align: center;
   cursor: pointer;
   margin: 20px 0;

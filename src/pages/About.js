@@ -30,18 +30,18 @@ const H2 = styled.h2`
   font-weight: 700;
   font-style: italic;
   text-transform: uppercase;
-  line-height: 1em;
+  line-height: 1.2em;
   margin: 2rem 0 0.6em;
   letter-spacing: 130%;
   text-align: center;
-  font-size: 24px;
+  font-size: 18px;
   padding: 0 10%;
   @media (min-width: 520px) {
-    font-size: 32px;
+    font-size: 20px;
     padding: 0;
   }
   @media (min-width: 720px) {
-    font-size: 36px;
+    font-size: 32px;
   }
 
   &.dark {
@@ -50,8 +50,7 @@ const H2 = styled.h2`
 `;
 
 const Laurel = styled.div`
-  font-weight: 700;
-  font-style: italic;
+  font-size: 1.1rem;
   text-transform: uppercase;
   line-height: 1em;
   margin: 0;
@@ -122,6 +121,8 @@ const About = props => {
     premios,
     awards
   } = data;
+
+  console.log(awards);
 
   const premiosArray = {
     es: premios.split(" // "),
