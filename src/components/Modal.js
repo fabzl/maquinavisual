@@ -31,10 +31,9 @@ const Content = styled.div`
   border: 1px solid white;
   width: 100%;
   height: 100%; */
-  border: 1px solid white;
   display: flex;
   height: 100%;
-  width: 100%;
+  width: 100vh;
   justify-content: center;
   align-items: center;
   position: relative;
@@ -80,7 +79,7 @@ class Modal extends Component {
             autoPlay
             controls
             width="100%"
-            height="100vmin"
+            height="100vh"
             onEnded={this.videoEnd}
           />
         </Content>

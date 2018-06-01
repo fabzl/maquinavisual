@@ -14,6 +14,8 @@ const Modal = styled.div`
   right: 0;
   bottom: 0;
   left: 0;
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
 `;
 
 const Holder = styled.div`

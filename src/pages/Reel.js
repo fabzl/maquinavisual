@@ -5,11 +5,15 @@ import ReactPlayer from "react-player";
 import { fadeIn } from "../styles/globals";
 
 // import { enableScroll, disableScroll } from "../helpers";
-import { stopVideo } from "../redux/actions";
+import { stopVideo, playVideo } from "../redux/actions";
 // import { colors } from "../styles/globals";
 import { Link } from "react-router-dom";
 
 import { colors, tvOn } from "../styles/globals";
+
+let hidden = false;
+
+console.log(hidden);
 
 const Overlay = styled.div`
   position: fixed; /* Sit on top of the page content */
@@ -19,6 +23,11 @@ const Overlay = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
+
+  /*  transition: transform 1s ease-in-out;
+ transform: ${props =>
+   props.showVideo ? "translateY(-100%)" : "translateY(0%)"};
+  */
   background-color: rgba(0, 0, 0, 1);
   z-index: 9999; /* Specify a stack order in case you're using a different order for other elements */
   cursor: pointer; /* Add a pointer on hover */
@@ -71,11 +80,12 @@ class Reel extends Component {
             autoPlay
             controls
             width="100%"
-            height="100%"
+            allow="autoplay; fullscreen"
+            height="100vh"
             config={{
               vimeo: {
-                onReady: true,
-                autoplay: true
+                onReady: true
+                // autoplay: true
               }
             }}
           />
@@ -89,8 +99,10 @@ const mapStateToProps = state => {
   return {
     data: state.data.posts,
     dataHome: state.data.pages[3].acf,
-    language: state.data.language
+    language: state.data.language,
+    showVideo: state.video.showVideo,
+    url: state.video.url
   };
 };
 
-export default connect(mapStateToProps, { stopVideo })(Reel);
+export default connect(mapStateToProps, { stopVideo, playVideo })(Reel);

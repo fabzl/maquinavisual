@@ -183,6 +183,14 @@ class Header extends React.Component {
     // );
   }
 
+  // putBackAndPlayvideo = event => {
+  //   console.log("putbackandplay");
+  //   // this.setState({ openMenu: !this.state.openMenu });
+  //   // this.setState({ hiddenVideo: true });
+  //   event.preventDefault();
+  //   playVideo();
+  // };
+
   openMenu = () => {
     this.setState({ openMenu: !this.state.openMenu });
   };

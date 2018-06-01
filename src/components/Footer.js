@@ -93,8 +93,7 @@ const LinkTo = styled.a`
   font-weight: 500;
   color: ${colors.white};
   text-decoration: none;
-  font-size: 16px;
-  padding-left: 10px;
+
   padding-right: 10px;
   font-size: 16px;
   white-space: nowrap;
@@ -107,6 +106,7 @@ const LinkTo = styled.a`
     width: 100%;
     display: block;
     margin-bottom: 14px;
+    font-size: 16px;
   }
 `;
 
