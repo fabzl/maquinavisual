@@ -96,7 +96,7 @@ const LinkTo = styled.a`
 
   padding-right: 10px;
   font-size: 16px;
-  white-space: nowrap;
+  /* white-space: nowrap; */
   transition: 1s all;
   &:hover {
     color: ${colors.violet};
@@ -106,7 +106,7 @@ const LinkTo = styled.a`
     width: 100%;
     display: block;
     margin-bottom: 14px;
-    font-size: 16px;
+    font-size: 2.5vw;
   }
 `;
 
