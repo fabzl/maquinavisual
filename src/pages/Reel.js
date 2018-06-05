@@ -11,9 +11,9 @@ import { Link } from "react-router-dom";
 
 import { colors, tvOn } from "../styles/globals";
 
-let hidden = false;
+// let hidden = false;
 
-console.log(hidden);
+// console.log(hidden);
 
 const Overlay = styled.div`
   position: fixed; /* Sit on top of the page content */
@@ -76,7 +76,7 @@ class Reel extends Component {
 
           <ReactPlayer
             url={this.props.dataHome.reel_url}
-            playing={true}
+            playing={this.state.playing}
             autoPlay
             controls
             width="100%"

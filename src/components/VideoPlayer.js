@@ -15,7 +15,7 @@ const Modal = styled.div`
   bottom: 0;
   left: 0;
   width: 100%; /* Full width (cover the whole page) */
-  height: 100%; /* Full height (cover the whole page) */
+  height: 100vh; /* Full height (cover the whole page) */
 `;
 
 const Holder = styled.div`
@@ -38,7 +38,7 @@ const Responsive = styled.div`
   top: 50%;
   left: 50%;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   transform: translate(-50%, -50%);
   max-width: 175vh;
   padding-bottom: ${props => (props.showVideo ? 56.25 : 50)}%;
@@ -48,8 +48,8 @@ const Player = styled.div`
   position: absolute;
   top: 0;
   bottom: 0;
-  /* width: 100%; */
-  height: 100%;
+  width: 100%;
+  height: 100vh;
   z-index: 0;
   transform: translateZ(0);
   transition: left 0.3s;
@@ -129,6 +129,9 @@ class VideoPlayer extends Component {
               wrapper={Player}
               onEnded={this.videoEnd}
               onReady={this.videoReady}
+              width="100%"
+              allow="autoplay; fullscreen"
+              height="100vh"
             />
           </Responsive>
         </Holder>
