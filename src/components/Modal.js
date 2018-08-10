@@ -31,7 +31,7 @@ const Content = styled.div`
   border: 1px solid white;
   width: 100%;
   height: 100%; */
-  display: flex;
+  display: block;
   height: 100%;
   width: 100vh;
   justify-content: center;
@@ -94,4 +94,7 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, { stopVideo })(Modal);
+export default connect(
+  mapStateToProps,
+  { stopVideo }
+)(Modal);
