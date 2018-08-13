@@ -58,13 +58,13 @@ class App extends Component {
             <Header />
 
             <div style={{ flex: 1 }}>
-            
-                <Route exact path="/" component={Home} />
-                <Route exact path="/work" component={Work} />
-                <Route exact path="/work/:link" component={ShowWork} />
-                <Route exact path="/about" component={About} />
-                <Route exact path="/contact" component={Contact} />
-                <Route exact path="/reel" component={Reel} />
+              <Route exact path="/" component={Home} />
+              <Route exact path="/work" component={Work} />
+              <Route exact path="/work/:link" component={ShowWork} />
+              <Route exact path="/about" component={About} />
+              <Route exact path="/contact" component={Contact} />
+              <Route exact path="/reel" component={Reel} />
+              <Route exact path="/promotions" component={Promotions} />
             </div>
           </div>
         </Router>
@@ -86,9 +86,12 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, {
-  fetchData,
-  loaderLoading,
-  loaderVisible,
-  contentLoaded
-})(App);
+export default connect(
+  mapStateToProps,
+  {
+    fetchData,
+    loaderLoading,
+    loaderVisible,
+    contentLoaded
+  }
+)(App);
