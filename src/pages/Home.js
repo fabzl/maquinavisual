@@ -38,11 +38,19 @@ const LinkTo = styled(Link)`
     color: ${colors.black};
   }
 `;
+function isSelectedPageHome(dataHomeIn) {
+  /*   console.log(dataHomeIn.slug, "datahome");
+    if (dataHomeIn.slug === "home") {
+      console.log("isSelectedPageHome: ", dataHomeIn.slug === "home");
+    } */
+    return dataHomeIn.slug === "home";
+  }
 
 const Home = props => (
   <div>
+        {console.log("props", props.dataHome, props.dataHome[0].acf.videos)}
     <VideoHome
-      video={props.dataHome.videos}
+      video={props.dataHome[0].acf.videos}
       title={
         props.language === "es"
           ? props.dataHome.intro_text_español
@@ -61,7 +69,7 @@ const Home = props => (
 const mapStateToProps = state => {
   return {
     data: state.data.posts,
-    dataHome: state.data.pages[3].acf,
+    dataHome: state.data.pages.filter(isSelectedPageHome),
     dataContact: state.data.pages[0].acf,
     language: state.data.language
   };

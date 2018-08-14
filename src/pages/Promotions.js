@@ -8,6 +8,20 @@ import Grid from "../components/Grid";
 import translations from "../translations";
 import { colors } from "../styles/globals";
 
+const P = styled.p`
+  color: ${colors.black};
+  text-align: center;
+`;
+
+const H2 = styled.h2`
+  color: ${colors.black};
+  text-align: center;
+`;
+
+const Intro = styled.div`
+  background: ${colors.orange};
+`;
+
 const AllWork = styled.div`
   padding: 0;
   background: linear-gradient(
@@ -41,20 +55,10 @@ const LinkTo = styled(Link)`
 
 const Promotions = props => (
   <div>
-    <VideoHome
-      video={props.dataHome.videos}
-      title={
-        props.language === "es"
-          ? props.dataHome.intro_text_español
-          : props.dataHome.intro_text_english
-      }
-    />
-    <Grid data={props.data} language={props.language} />
-    <AllWork>
-      <H3>
-        <LinkTo to="/work">{translations.home.link[props.language]}</LinkTo>
-      </H3>
-    </AllWork>
+    <Intro>
+      <H2></H2>
+      <P></P>
+    </Intro>
   </div>
 );
 

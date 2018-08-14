@@ -112,43 +112,38 @@ const Box = styled.div`
   );
   padding-bottom: 100px;
 `;
+function isSelectedPageAbout(dataAboutIn) {
+  /*   console.log(dataHomeIn.slug, "datahome");
+    if (dataHomeIn.slug === "home") {
+      console.log("isSelectedPageHome: ", dataHomeIn.slug === "home");
+    } */
+    return dataAboutIn.slug === "about";
+  }
 
 const Item = ({ item }) => <Laurel>{item}</Laurel>;
 
-const About = props => {
-  const { data, language } = props;
-  const {
-    // about_image_big,
-    about_image_small_1,
-    about_image_small_2,
-    about_image_small_3,
-    about_image_small_4,
-    text_about,
-    about_us,
-    premios,
-    awards
-  } = data;
-
-  console.log(awards);
+const About = (props) => {
+  {console.log("propsabout", props.dataAbout, props.dataAbout[0].acf)}
+  
 
   const premiosArray = {
-    es: premios.split(" // "),
-    en: awards.split(" // ")
+    es: props.dataAbout[0].acf.premios.split(" // "),
+    en: props.dataAbout[0].acf.awards.split(" // ")
   };
 
   return (
     <div>
-      <Wrap src={props.data.about_image_big.url} />
+      <Wrap src={props.dataAbout[0].acf.about_image_big.url} />
       <Acerca>
         <H2 className="title-part line-1">
-          {language === "es" ? text_about : about_us}
+          {props.dataAbout[0].acf.language === "es" ? props.dataAbout[0].acf.text_about : props.dataAbout[0].acf.about_us}
         </H2>
       </Acerca>
       <Images>
-        <Image src={about_image_small_1.url} />
-        <Image src={about_image_small_2.url} />
-        <Image src={about_image_small_3.url} />
-        <Image src={about_image_small_4.url} />
+        <Image src={props.dataAbout[0].acf.about_image_small_1.url} />
+        <Image src={props.dataAbout[0].acf.about_image_small_2.url} />
+        <Image src={props.dataAbout[0].acf.about_image_small_3.url} />
+        <Image src={props.dataAbout[0].acf.about_image_small_4.url} />
       </Images>
       <Prizes>
         <Box>
@@ -168,7 +163,7 @@ const About = props => {
 
 const mapStateToProps = state => {
   return {
-    data: state.data.pages[1].acf,
+    dataAbout: state.data.pages.filter(isSelectedPageAbout),
     language: state.data.language
   };
 };

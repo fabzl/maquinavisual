@@ -54,6 +54,14 @@ const CloseButton = styled.div`
   }
 `;
 
+function isSelectedPageHome(dataHomeIn) {
+  /*   console.log(dataHomeIn.slug, "datahome");
+    if (dataHomeIn.slug === "home") {
+      console.log("isSelectedPageHome: ", dataHomeIn.slug === "home");
+    } */
+    return dataHomeIn.slug === "home";
+  }
+
 class Reel extends Component {
   componentDidMount() {
     // disableScroll();
@@ -66,7 +74,7 @@ class Reel extends Component {
 
   render() {
     return (
-      <Overlay {...this.props}>
+      <Overlay {...this.props.dataHome[0]}>
         <Content>
           <Link to="/">
             <CloseButton>
@@ -75,8 +83,8 @@ class Reel extends Component {
           </Link>
 
           <ReactPlayer
-            url={this.props.dataHome.reel_url}
-            playing={this.state.playing}
+            url={this.props.dataHome[0].acf.reel_url}
+            /* playing={this.state.playing} */
             autoPlay
             controls
             width="100%"
@@ -98,7 +106,7 @@ class Reel extends Component {
 const mapStateToProps = state => {
   return {
     data: state.data.posts,
-    dataHome: state.data.pages[3].acf,
+    dataHome: state.data.pages.filter(isSelectedPageHome),
     language: state.data.language,
     showVideo: state.video.showVideo,
     url: state.video.url
