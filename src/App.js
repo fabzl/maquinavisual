@@ -10,6 +10,7 @@ import ShowWork from "./pages/ShowWork";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Reel from "./pages/Reel";
+import Promotions from "./pages/Promotions"
 
 // Components
 import Header from "./components/Header";
