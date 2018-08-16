@@ -140,9 +140,17 @@ export const smoothScroll = () => {
     }, 10);
   }
 };
+function isSelectedPageContact(dataContactIn) {
+  /*   console.log(dataHomeIn.slug, "datahome");
+    if (dataHomeIn.slug === "home") {
+      console.log("isSelectedPageHome: ", dataHomeIn.slug === "home");
+    } */
+    return dataContactIn.slug === "contact";
+  }
 
 const Footer = props => (
   <Wrap>
+    {console.log("propscontact", props, props.dataContact[0])}
     <Router>
       <Route to="/">
         <Logo src={logo} />
@@ -152,20 +160,20 @@ const Footer = props => (
       <Social />
       <General>
         <Links>
-          <LinkTo href={"tel:" + props.dataContact.telefono_de_contacto}>
+          <LinkTo href={"tel:" + props.dataContact[0].acf.telefono_de_contacto}>
             <i className="fas fa-mobile-alt fa-2x" />
-            {props.dataContact.telefono_de_contacto}
+            {props.dataContact[0].acf.telefono_de_contacto}
           </LinkTo>
           <LinkTo
             href={
               "mailto:" +
-              props.dataContact.mail_de_contacto +
+              props.dataContact[0].acf.mail_de_contacto +
               "?subject=Contacto%20desde%20" +
-              props.dataContact.mail_de_contacto
+              props.dataContact[0].acf.mail_de_contacto
             }
           >
             <i className="far fa-envelope fa-2x" />
-            {props.dataContact.mail_de_contacto}
+            {props.dataContact[0].acf.mail_de_contacto}
           </LinkTo>
         </Links>
       </General>
@@ -184,7 +192,7 @@ const Footer = props => (
 const mapStateToProps = state => {
   return {
     language: state.data.language,
-    dataContact: state.data.pages[0].acf
+    dataContact: state.data.pages.filter(isSelectedPageContact)
   };
 };
 

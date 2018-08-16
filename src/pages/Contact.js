@@ -9,13 +9,13 @@ function isSelectedPageContact(dataContactIn) {
     if (dataHomeIn.slug === "home") {
       console.log("isSelectedPageHome: ", dataHomeIn.slug === "home");
     } */
-    return dataContactIn.slug === "home";
+    return dataContactIn.slug === "contact";
   }
 const Contact = props => (
   <div>
     {console.log("propscontact", props, props)}
     <VideoHome
-      video={props.dataContact[0].acf.videos}
+      video={props.dataContact[0].acf.video}
       contact
       fontColor
       title={
