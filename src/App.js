@@ -10,7 +10,7 @@ import ShowWork from "./pages/ShowWork";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Reel from "./pages/Reel";
-import Promotions from "./pages/Promotions"
+import Products from "./pages/Products"
 
 // Components
 import Header from "./components/Header";
@@ -50,6 +50,7 @@ class App extends Component {
     return (
       <Wrap {...this.props}>
         {this.setToDestroy()}
+        {console.log("pages", this)}
         <Loader />
         <Fade in={this.props.showVideo}>
           <Modal />
@@ -65,7 +66,7 @@ class App extends Component {
               <Route exact path="/about" component={About} />
               <Route exact path="/contact" component={Contact} />
               <Route exact path="/reel" component={Reel} />
-              <Route exact path="/promotions" component={Promotions} />
+              <Route exact path="/products" component={Products} />
             </div>
           </div>
         </Router>
