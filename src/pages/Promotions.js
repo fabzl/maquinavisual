@@ -8,18 +8,42 @@ import Grid from "../components/Grid";
 import translations from "../translations";
 import { colors } from "../styles/globals";
 
+const Input = styled.input`
+`;
+
+const Inpunts = styled.div`
+  float: center;
+  width: 80%;
+  object-position: center;
+  margin: 10% 10%;
+`;
+
+const Formulario = styled.div`
+`;
+const Form = styled.form`
+`;
+
+const Label = styled.label`
+  background: ${colors.orange};
+  float: right;
+  width: 25%;
+  object-position: center;
+  margin: 5% 10% 10% 10%;
+`;
+
 const P = styled.p`
-  color: ${colors.black};
+  color: ${colors.white};
   text-align: center;
 `;
 
 const H2 = styled.h2`
-  color: ${colors.black};
+  color: ${colors.white};
   text-align: center;
+  margin-top: 60px;
 `;
 
 const Intro = styled.div`
-  background: ${colors.orange};
+
 `;
 
 const AllWork = styled.div`
@@ -52,21 +76,50 @@ const LinkTo = styled(Link)`
     color: ${colors.black};
   }
 `;
+function isSelectedPagePromotions(dataPromotionsIn) {
+  /*   console.log(dataHomeIn.slug, "datahome");
+    if (dataHomeIn.slug === "home") {
+      console.log("isSelectedPageHome: ", dataHomeIn.slug === "home");
+    } */
+    return dataPromotionsIn.slug === "promotions";
+  }
 
 const Promotions = props => (
   <div>
+    {console.log("props", props.dataPromotions, props.dataPromotions[0])}
     <Intro>
-      <H2></H2>
-      <P></P>
+      <H2>{props.dataPromotions[0].acf.intro_title}</H2>
+      <P>{props.dataPromotions[0].acf.intro_text}</P>
     </Intro>
+    <Formulario>
+      <Form>
+        <Label><input type="radio" id="op2" value="first_checkbox" name="pack"/>
+          <H2>{props.dataPromotions[0].acf.pack_name}</H2>
+          <P>{props.dataPromotions[0].acf.pack_text}</P>
+          <P>{props.dataPromotions[0].acf.pack_price}</P>
+        </Label>
+        <Label><input type="radio" id="op2" value="first_checkbox" name="pack"/>
+          <H2>{props.dataPromotions[0].acf.pack_name_2}</H2>
+          <P>{props.dataPromotions[0].acf.pack_text_2}</P>
+          <P>{props.dataPromotions[0].acf.pack_price_2}</P>
+        </Label>
+        <Inpunts>
+          <P>{props.dataPromotions[0].acf.commercial_conditions}</P>
+          <Input type="email" id="mail" value=""/>
+          <Input type="name" id="name" value=""/>
+          <Input type="textarea" id="text" value=""/>
+          <Input type="submit" id="submit" value="enviar"/>
+        </Inpunts>
+      </Form>
+    </Formulario>
+    
   </div>
 );
 
 const mapStateToProps = state => {
   return {
     data: state.data.posts,
-    dataHome: state.data.pages[3].acf,
-    dataContact: state.data.pages[0].acf,
+    dataPromotions: state.data.pages.filter(isSelectedPagePromotions),
     language: state.data.language
   };
 };
