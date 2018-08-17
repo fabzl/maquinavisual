@@ -237,6 +237,10 @@ class Header extends React.Component {
             {translations.header.contact[language]}
           </LinkTo>
 
+          <LinkTo onClick={this.checkMobileNav} to="/promotions">
+            {translations.header.contact[language]}
+          </LinkTo>
+
           <Social header />
 
           <BackToTop

@@ -8,13 +8,26 @@ import Grid from "../components/Grid";
 import translations from "../translations";
 import { colors } from "../styles/globals";
 
+const Textarea = styled.textarea`
+  float: center;
+  width: 50%;
+  object-position: center;
+  margin: 5% 25%;
+  resize: none;
+`;
+
 const Input = styled.input`
+  float: center;
+  width: 50%;
+  object-position: center;
+  margin: 5% 25%;
 `;
 
 const Inpunts = styled.div`
   float: center;
   width: 80%;
   object-position: center;
+  margin-bottom: 4%;
   margin: 10% 10%;
 `;
 
@@ -81,7 +94,7 @@ function isSelectedPageProducts(dataProductsIn) {
     if (dataHomeIn.slug === "home") {
       console.log("isSelectedPageHome: ", dataHomeIn.slug === "home");
     } */
-    return dataProductsIn.slug === "Products";
+    return dataProductsIn.slug === "products";
   }
 
 const Products = props => (
@@ -92,7 +105,7 @@ const Products = props => (
       <P>{props.dataProducts[0].acf.intro_text}</P>
     </Intro>
     <Formulario>
-      <Form>
+      <Form action="/action_page.php" id="ContacForm">
         <Label><input type="radio" id="op2" value="first_checkbox" name="pack"/>
           <H2>{props.dataProducts[0].acf.pack_name}</H2>
           <P>{props.dataProducts[0].acf.pack_text}</P>
@@ -107,7 +120,7 @@ const Products = props => (
           <P>{props.dataProducts[0].acf.commercial_conditions}</P>
           <Input type="email" id="mail" value=""/>
           <Input type="name" id="name" value=""/>
-          <Input type="textarea" id="text" value=""/>
+          <Textarea name="comment" form="ContacForm"></Textarea> 
           <Input type="submit" id="submit" value="enviar"/>
         </Inpunts>
       </Form>
