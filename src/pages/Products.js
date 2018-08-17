@@ -76,35 +76,35 @@ const LinkTo = styled(Link)`
     color: ${colors.black};
   }
 `;
-function isSelectedPagePromotions(dataPromotionsIn) {
+function isSelectedPageProducts(dataProductsIn) {
   /*   console.log(dataHomeIn.slug, "datahome");
     if (dataHomeIn.slug === "home") {
       console.log("isSelectedPageHome: ", dataHomeIn.slug === "home");
     } */
-    return dataPromotionsIn.slug === "promotions";
+    return dataProductsIn.slug === "Products";
   }
 
-const Promotions = props => (
+const Products = props => (
   <div>
-    {console.log("props", props.dataPromotions, props.dataPromotions[0])}
+    {console.log("props", props.dataProducts, props.dataProducts[0])}
     <Intro>
-      <H2>{props.dataPromotions[0].acf.intro_title}</H2>
-      <P>{props.dataPromotions[0].acf.intro_text}</P>
+      <H2>{props.dataProducts[0].acf.intro_title}</H2>
+      <P>{props.dataProducts[0].acf.intro_text}</P>
     </Intro>
     <Formulario>
       <Form>
         <Label><input type="radio" id="op2" value="first_checkbox" name="pack"/>
-          <H2>{props.dataPromotions[0].acf.pack_name}</H2>
-          <P>{props.dataPromotions[0].acf.pack_text}</P>
-          <P>{props.dataPromotions[0].acf.pack_price}</P>
+          <H2>{props.dataProducts[0].acf.pack_name}</H2>
+          <P>{props.dataProducts[0].acf.pack_text}</P>
+          <P>{props.dataProducts[0].acf.pack_price}</P>
         </Label>
         <Label><input type="radio" id="op2" value="first_checkbox" name="pack"/>
-          <H2>{props.dataPromotions[0].acf.pack_name_2}</H2>
-          <P>{props.dataPromotions[0].acf.pack_text_2}</P>
-          <P>{props.dataPromotions[0].acf.pack_price_2}</P>
+          <H2>{props.dataProducts[0].acf.pack_name_2}</H2>
+          <P>{props.dataProducts[0].acf.pack_text_2}</P>
+          <P>{props.dataProducts[0].acf.pack_price_2}</P>
         </Label>
         <Inpunts>
-          <P>{props.dataPromotions[0].acf.commercial_conditions}</P>
+          <P>{props.dataProducts[0].acf.commercial_conditions}</P>
           <Input type="email" id="mail" value=""/>
           <Input type="name" id="name" value=""/>
           <Input type="textarea" id="text" value=""/>
@@ -119,9 +119,9 @@ const Promotions = props => (
 const mapStateToProps = state => {
   return {
     data: state.data.posts,
-    dataPromotions: state.data.pages.filter(isSelectedPagePromotions),
+    dataProducts: state.data.pages.filter(isSelectedPageProducts),
     language: state.data.language
   };
 };
 
-export default connect(mapStateToProps)(Promotions);
+export default connect(mapStateToProps)(Products);
