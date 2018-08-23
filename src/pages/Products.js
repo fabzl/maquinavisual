@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import axios from "axios"
 
 import VideoHome from "../components/VideoHome";
 import Grid from "../components/Grid";
