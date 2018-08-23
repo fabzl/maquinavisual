@@ -9,6 +9,8 @@
 # production
 /build
 
+# config
+/src/config/mailkey.js
 
 # misc
 .DS_Store
