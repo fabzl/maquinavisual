@@ -20,6 +20,10 @@ const Translations = {
     contact: {
       en: "Contact",
       es: "Contacto"
+    },
+    promotions: {
+      en: "promociones",
+      es: "promotions"
     }
   },
   home: {
