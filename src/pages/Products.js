@@ -17,7 +17,21 @@ const Textarea = styled.textarea`
   resize: none;
 `;
 
-const Input = styled.input`
+const InputN = styled.div`
+  float: center;
+  width: 50%;
+  object-position: center;
+  margin: 5% 25%;
+`;
+
+const InputE = styled.div`
+  float: center;
+  width: 50%;
+  object-position: center;
+  margin: 5% 25%;
+`;
+
+const InputT = styled.div`
   float: center;
   width: 50%;
   object-position: center;
@@ -97,32 +111,7 @@ function isSelectedPageProducts(dataProductsIn) {
     } */
     return dataProductsIn.slug === "products";
   }
- function handleSubmit(e){
-    e.preventDefault();
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-    axios({
-        method: "POST", 
-        url:"http://localhost:3002/send", 
-        data: {
-            name: name,   
-            email: email,  
-            messsage: message
-        }
-    }).then((response)=>{
-        if (response.data.msg === 'success'){
-            alert("Message Sent."); 
-            (resetForm)()
-        }else if(response.data.msg === 'fail'){
-            alert("Message failed to send.")
-        }
-    })
-}
 
-function resetForm(){
-  document.getElementById('contact-form').reset();
-}
 
 
 const Products = props => (
@@ -133,42 +122,35 @@ const Products = props => (
       <P>{props.dataProducts[0].acf.intro_text}</P>
     </Intro>
     <Formulario>
-      <Form action="/action_page.php" id="ContacForm">
-        <Label><input type="radio" id="op2" value="first_checkbox" name="pack"/>
+      <Form id="contact-form" action="ProductsContact.php" method="POST">
+        <Label><input type="radio" id="pack" value="first_checkbox" name="pack"/>
           <H2>{props.dataProducts[0].acf.pack_name}</H2>
           <P>{props.dataProducts[0].acf.pack_text}</P>
           <P>{props.dataProducts[0].acf.pack_price}</P>
         </Label>
-        <Label><input type="radio" id="op2" value="first_checkbox" name="pack"/>
+        <Label><input type="radio" id="pack" value="first_checkbox" name="pack"/>
           <H2>{props.dataProducts[0].acf.pack_name_2}</H2>
           <P>{props.dataProducts[0].acf.pack_text_2}</P>
           <P>{props.dataProducts[0].acf.pack_price_2}</P>
         </Label>
         <Inpunts>
           <P>{props.dataProducts[0].acf.commercial_conditions}</P>
-          <Input type="email" id="mail" value=""/>
-          <Input type="name" id="name" value=""/>
-          <Textarea name="comment" form="ContacForm"></Textarea> 
-          <Input type="submit" id="submit" value="enviar"/>
+          <InputE className="form-group">
+            <label for="email"></label>
+            <input type="email" className="form-control" id="email" name="email" aria-describedby="emailHelp" />
+          </InputE>
+          <InputN className="form-group">
+            <label for="name"></label>
+            <input type="text" className="form-control" id="name" name="name"/>
+          </InputN>
+          <InputT className="form-group">
+            <label for="message"></label>
+            <textarea className="form-control" rows="5" id="message" name="message"></textarea>
+          </InputT>
+          <button type="submit" className="btn btn-primary">Submit</button>
         </Inpunts>
       </Form>
     </Formulario>
-    <form id="contact-form" onSubmit={(handleSubmit.bind(this))} method="POST">
-    <div className="form-group">
-        <label for="name">Name</label>
-        <input type="text" className="form-control" id="name" />
-    </div>
-    <div className="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="email" className="form-control" id="email" aria-describedby="emailHelp" />
-    </div>
-    <div className="form-group">
-        <label for="message">Message</label>
-        <textarea className="form-control" rows="5" id="message"></textarea>
-    </div>
-    <button type="submit" className="btn btn-primary">Submit</button>
-</form>
-    
   </div>
 );
 
